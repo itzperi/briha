@@ -86,7 +86,7 @@ const real: Facts = {
   walkIn: true,
   groupDiningConfirmed: false,
   delivery: { swiggy: null, zomato: null, direct: null },
-  socials: { instagram: 'https://www.instagram.com/brihadhee', facebook: null, gbp: null },
+  socials: { instagram: 'https://www.instagram.com/brihadhee', facebook: null, gbp: 'https://share.google/E8Ge6r6YJMocqVwhH' },
   listings: {
     eazydiner: 'https://www.eazydiner.com/chennai/brihadhee-anna-nagar-east-chennai-703877',
     zomato: null,
