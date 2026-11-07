@@ -1,0 +1,40 @@
+{
+  "name": "brihadhee-site",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "make:brand": "node scripts/make-brand.mjs",
+    "build": "node scripts/make-brand.mjs && astro build && node scripts/postbuild-sitemap.mjs && node scripts/check-facts.mjs && node scripts/check-seo.mjs && node scripts/check-links.mjs && node scripts/cleanup.mjs",
+    "build:draft": "cross-env PUBLIC_DRAFT_MODE=1 astro build --outDir dist-draft && node scripts/postbuild-sitemap.mjs --dist dist-draft && node scripts/cleanup.mjs --dist dist-draft",
+    "build:fixture": "cross-env FACTS_FIXTURE=1 PUBLIC_SITE_URL=https://fixture.example astro build --outDir dist-fixture && node scripts/postbuild-sitemap.mjs --dist dist-fixture && node scripts/check-facts.mjs --dist dist-fixture --fixture && node scripts/check-seo.mjs --dist dist-fixture && node scripts/check-links.mjs --dist dist-fixture && node scripts/cleanup.mjs --dist dist-fixture",
+    "preview": "astro preview",
+    "check:facts": "node scripts/check-facts.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
+    "typecheck": "astro check",
+    "lint": "astro check"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "cross-env": "^10.1.0",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/noto-sans-tamil": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^5.18.2",
+    "node-html-parser": "^9.0.7",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5"
+  }
+}

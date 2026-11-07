@@ -1,0 +1,26 @@
+---
+import type { MenuItem } from '../data/menu';
+import { priceLabel } from '../data/menu';
+interface Props { items: MenuItem[]; caption?: string }
+const { items, caption } = Astro.props;
+const anyPrice = items.some((i) => priceLabel(i) !== '');
+---
+{items.length > 0 && (
+  <table class="menu" data-menu-table>
+    {caption && <caption class="sr-only" style="position:absolute;left:-9999px">{caption}</caption>}
+    <thead><tr><th scope="col">Dish</th>{anyPrice && <th scope="col">Price</th>}</tr></thead>
+    <tbody>
+      {items.map((m) => (
+        <tr data-item={m.nameEn.toLowerCase()}>
+          <td>
+            {m.isVeg && <span class="veg-dot" role="img" aria-label="Vegetarian"></span>}
+            <strong>{m.nameEn}</strong>
+            {m.nameTa && <span lang="ta"> · {m.nameTa}</span>}
+            {m.description && <div class="text-sm" style="opacity:.8">{m.description}</div>}
+          </td>
+          {anyPrice && <td class="price">{priceLabel(m)}</td>}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)}

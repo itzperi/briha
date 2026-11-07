@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import Placeholder from './Placeholder.astro';
+
+// Real photos live in src/assets/photos/<name>.(jpg|png|webp). If a photo does not exist the component renders
+// nothing, unless `required` is set (then a labelled placeholder renders and the production build fails).
+const photos = import.meta.glob<{ default: ImageMetadata }>('/src/assets/photos/*.{jpg,jpeg,png,webp,avif}', { eager: true });
+
+interface Props { name: string; alt: string; label?: string; required?: boolean; eager?: boolean; widths?: number[]; sizes?: string; class?: string }
+const { name, alt, label = name, required = false, eager = false, widths = [480, 800, 1200], sizes = '(min-width: 1120px) 1120px, 100vw', class: cls = '' } = Astro.props;
+const found = Object.entries(photos).find(([p]) => p.split('/').pop()!.replace(/\.[^.]+$/, '') === name);
+const meta = found?.[1].default;
+---
+{meta ? (
+  <Image src={meta} alt={alt} widths={widths} sizes={sizes} format="webp" loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding={eager ? 'sync' : 'async'} class={`rounded-xl w-full h-auto ${cls}`} />
+) : required ? (
+  <Placeholder label={label} class={cls} />
+) : null}

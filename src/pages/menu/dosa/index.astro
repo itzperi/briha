@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import MenuTable from '../../../components/MenuTable.astro';
+import FAQ from '../../../components/FAQ.astro';
+import Photo from '../../../components/Photo.astro';
+import { getCollection } from 'astro:content';
+import { facts } from '../../../data/brand-facts';
+import { itemsIn, dishPages, menuNotes } from '../../../data/menu';
+import { builderSteps, chefSuggestions } from '../../../data/dosa-builder';
+import { faqsFor } from '../../../data/faq';
+import { faqSchema, menuSchema } from '../../../lib/schema';
+import { ok } from '../../../lib/facts';
+
+const items = itemsIn('dosa');
+const live = items.length > 0;
+const faqs = faqsFor('/menu/dosa/');
+const guides = await getCollection('guides', (g) => !g.data.draft);
+const guide = guides.find((g) => g.id.replace(/\.mdx$/, '') === 'types-of-dosa');
+const pages = dishPages().filter((d) => d.section === 'dosa');
+const count = ok(facts.dosaCount) ? facts.dosaCount : null;
+const title = 'Dosa and Build Your Own Dosa in Anna Nagar | Brihadhee';
+const description = 'Dosa at Brihadhee, 3rd Avenue, Anna Nagar, Chennai: ghee roast, rava, kal dosa and more, or build your own dosa. See the menu and prices.';
+---
+<BaseLayout {title} {description} path="/menu/dosa/" noindex={!live} breadcrumbs={[{ name: 'Menu', href: '/menu/' }, { name: 'Dosa', href: '/menu/dosa/' }]} schema={[menuSchema(['dosa']), faqSchema(faqs)]}>
+  <div class="wrap py-6">
+    <h1>Dosa and build-your-own dosa in Anna Nagar</h1>
+    <p class="mt-3 text-lg max-w-3xl">
+      Brihadhee, {facts.locality}, serves dosa{count ? <> in {count} varieties</> : ''} and lets you build your own: choose a batter, a topping, a stuffing and a garnish.
+      Dosa is a thin crepe made from fermented rice and urad dal batter, served with chutney and sambar.
+    </p>
+    <div class="mt-5"><Photo name="dosa-hero" alt="A long rolled golden dosa with sambar and two chutneys" eager /></div>
+
+    {live && (
+      <>
+        <h2>Dosa variety</h2>
+        <MenuTable items={items} caption="Dosa at Brihadhee" />
+        {pages.length > 0 && (
+          <ul class="prose-b mt-3">{pages.map((d) => <li><a href={`/menu/dosa/${d.slug}/`}>{d.nameEn}</a></li>)}</ul>
+        )}
+      </>
+    )}
+
+    <h2 id="build-your-own">Build your own dosa</h2>
+    <p>Pick one from each step. Each choice has its own price.</p>
+    <div class="grid gap-4 mt-4 md:grid-cols-2">
+      {builderSteps.map((s) => (
+        <section class="card" aria-labelledby={`step-${s.step}`}>
+          <h3 id={`step-${s.step}`} style="margin-top:0">{s.step}. {s.title}</h3>
+          <table class="menu">
+            <tbody>
+              {s.options.map((o) => (
+                <tr><td><strong>{o.name}</strong>{o.note && <div class="text-sm" style="opacity:.8">{o.note}</div>}</td><td class="price">₹{o.price}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      ))}
+    </div>
+
+    <h2 id="chefs-suggestions">Chef's suggestions</h2>
+    <p>Ready-made combinations from the menu.</p>
+    <table class="menu mt-3">
+      <thead><tr><th scope="col">Dosa</th><th scope="col">Price</th></tr></thead>
+      <tbody>
+        {chefSuggestions.map((c) => (
+          <tr><td><strong>{c.name}</strong><div class="text-sm" style="opacity:.8">{c.build}</div></td><td class="price">₹{c.price}</td></tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="mt-3 text-sm" style="opacity:.8">{menuNotes.join(' ')}</p>
+
+    {guide && <p class="mt-4"><a href={`/guides/${guide.id.replace(/\.mdx$/, '')}/`}>Read our guide to types of dosa</a></p>}
+    {faqs.length > 0 && (<><h2>Dosa questions</h2><FAQ faqs={faqs} /></>)}
+    <p class="mt-8"><a class="btn btn-primary" href="/order/">Order</a> <a class="btn" href="/book-a-table/">Book a table</a></p>
+  </div>
+</BaseLayout>

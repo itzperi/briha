@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MenuTable from '../../components/MenuTable.astro';
+import FAQ from '../../components/FAQ.astro';
+import { facts } from '../../data/brand-facts';
+import { sections, itemsIn, itemsInPeriod, confirmedItems, menuNotes } from '../../data/menu';
+import { menuPages } from '../../data/pages-meta';
+import { faqsFor } from '../../data/faq';
+import { faqSchema, menuSchema } from '../../lib/schema';
+import { answerSummary, telHref, ok } from '../../lib/facts';
+
+const live = confirmedItems().length > 0;
+const faqs = faqsFor('/menu/');
+const title = 'Menu | Brihadhee, South Indian Restaurant, Anna Nagar';
+const description = 'Menu at Brihadhee, W Block Main Road, 3rd Avenue, Anna Nagar, Chennai: dosa, tiffin, mini tiffin, Nellai meals, parotta and filter coffee.';
+const tel = telHref();
+const periodLinks = menuPages.filter((m) => m.kind === 'period' && itemsInPeriod(m.key as 'breakfast' | 'lunch' | 'dinner').length > 0);
+---
+<BaseLayout {title} {description} path="/menu/" noindex={!live} breadcrumbs={[{ name: 'Menu', href: '/menu/' }]} schema={[menuSchema(), faqSchema(faqs)]}>
+  <div class="wrap py-6">
+    <h1>Menu at Brihadhee, Anna Nagar</h1>
+    <p class="mt-3 text-lg max-w-3xl">{answerSummary()}</p>
+    {!live && (
+      <div class="card mt-5">
+        <p><strong>Our online menu is being finalised.</strong> We only publish dishes and prices that we have checked against the current menu.</p>
+        <p class="mt-2">Please {tel ? <>call us on <a href={tel}>{facts.phone}</a></> : 'ask at the restaurant'} or see the <a href="/order/">order page</a>.</p>
+      </div>
+    )}
+    {live && (
+      <>
+        <label class="block mt-5" id="filter-wrap" hidden>
+          <span class="font-semibold">Filter dishes</span>
+          <input id="menu-filter" type="search" class="block w-full mt-1 border-2 border-sand rounded-lg p-3 bg-white" placeholder="Type a dish, e.g. dosa" autocomplete="off" />
+        </label>
+        <nav aria-label="Menu sections" class="mt-4 flex flex-wrap gap-2">
+          {sections.filter((s) => itemsIn(s.id).length).map((s) => <a class="chip" href={`#${s.id}`}>{s.title}</a>)}
+        </nav>
+        {periodLinks.length > 0 && (
+          <p class="mt-3">By time of day: {periodLinks.map((p, i) => <><a href={`/menu/${p.page}/`}>{p.h1}</a>{i < periodLinks.length - 1 ? ' · ' : ''}</>)}</p>
+        )}
+        {sections.filter((s) => itemsIn(s.id).length).map((s) => (
+          <section id={s.id} aria-labelledby={`h-${s.id}`}>
+            <h2 id={`h-${s.id}`}>{s.path ? <a href={s.path}>{s.title}</a> : s.title}</h2>
+            <p class="mb-3">{s.intro}</p>
+            <MenuTable items={itemsIn(s.id)} caption={`${s.title} at Brihadhee`} />
+          </section>
+        ))}
+      </>
+    )}
+    {live && <p class="mt-6 text-sm" style="opacity:.85">{menuNotes.join(' ')} Dosa lovers: you can also <a href="/menu/dosa/#build-your-own">build your own dosa</a>.</p>}
+    {faqs.length > 0 && (<><h2>Menu questions</h2><FAQ faqs={faqs} /></>)}
+    <p class="mt-8"><a class="btn btn-primary" href="/order/">Order</a> <a class="btn" href="/book-a-table/">Book a table</a></p>
+  </div>
+</BaseLayout>
+
+<script>
+  const wrap = document.getElementById('filter-wrap');
+  const input = document.getElementById('menu-filter') as HTMLInputElement | null;
+  if (wrap && input) {
+    wrap.hidden = false;
+    let fired = false;
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      document.querySelectorAll<HTMLElement>('[data-item]').forEach((row) => {
+        row.hidden = q !== '' && !row.dataset.item!.includes(q);
+      });
+      if (!fired && q) {
+        fired = true;
+        (window as any).gtag?.('event', 'menu_filter_use', { page_path: location.pathname });
+      }
+    });
+  }
+</script>

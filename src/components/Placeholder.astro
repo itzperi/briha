@@ -1,0 +1,6 @@
+---
+// Clearly labelled box where REAL photography goes. The production gate fails while any placeholder remains.
+interface Props { label: string; class?: string }
+const { label, class: cls = '' } = Astro.props;
+---
+<div class={`placeholder ${cls}`} data-placeholder role="img" aria-label={label}>{label}</div>

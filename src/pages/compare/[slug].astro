@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import competitors from '../../data/competitors.json';
+
+/**
+ * Comparison template. UNROUTED until src/data/competitors.json holds dated, sourced facts.
+ * Entry shape: { slug, name, checkedOn: "YYYY-MM-DD", rows: [{ label, brihadhee, competitor, source }], summary }
+ * Keep it fair and factual: no disparagement, every cell sourced and dated.
+ */
+interface Row { label: string; brihadhee: string; competitor: string; source: string }
+interface Entry { slug: string; name: string; checkedOn: string; summary: string; rows: Row[] }
+
+export function getStaticPaths() {
+  return (competitors as Entry[]).map((c) => ({ params: { slug: c.slug }, props: { c } }));
+}
+const { c } = Astro.props;
+const path = `/compare/${c.slug}/`;
+---
+<BaseLayout title={`Brihadhee vs ${c.name} in Anna Nagar`.slice(0, 60)} description={c.summary.slice(0, 160)} {path} updated={c.checkedOn} breadcrumbs={[{ name: `Brihadhee vs ${c.name}`, href: path }]}>
+  <div class="wrap py-6">
+    <h1>Brihadhee vs {c.name} in Anna Nagar</h1>
+    <p class="mt-3 max-w-3xl">{c.summary}</p>
+    <table class="menu mt-5">
+      <thead><tr><th>Feature</th><th>Brihadhee</th><th>{c.name}</th><th>Source</th></tr></thead>
+      <tbody>{c.rows.map((r) => <tr><td>{r.label}</td><td>{r.brihadhee}</td><td>{r.competitor}</td><td>{r.source}</td></tr>)}</tbody>
+    </table>
+    <p class="mt-3 text-sm">Last verified {c.checkedOn}.</p>
+  </div>
+</BaseLayout>

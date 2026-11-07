@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const guides = (await getCollection('guides', (g) => !g.data.draft)).sort((a, b) => +b.data.updated - +a.data.updated);
+---
+<BaseLayout title="South Indian Food Guides | Brihadhee, Anna Nagar" description="Plain guides to South Indian dishes and Tamil food: dosa types, mini tiffin, Nellai meals and more, from Brihadhee in Anna Nagar, Chennai." path="/guides/" noindex={guides.length === 0} breadcrumbs={[{ name: 'Guides', href: '/guides/' }]}>
+  <div class="wrap py-6">
+    <h1>South Indian food guides</h1>
+    {guides.length === 0 ? (
+      <div class="card mt-5"><p>Our guides are being written. Check back soon.</p></div>
+    ) : (
+      <ul class="grid gap-4 mt-5 md:grid-cols-2" style="list-style:none;margin:0;padding:0">
+        {guides.map((g) => (
+          <li class="card"><h2 style="margin-top:0"><a href={`/guides/${g.id.replace(/\.mdx$/, '')}/`}>{g.data.title}</a></h2><p>{g.data.description}</p></li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BaseLayout>

@@ -1,0 +1,10 @@
+---
+import { telHref, directionsUrl } from '../lib/facts';
+const tel = telHref();
+---
+<nav class="actionbar" aria-label="Quick actions">
+  {tel && <a href={tel} data-event="call_click" data-label="actionbar">Call</a>}
+  <a href={directionsUrl()} rel="noopener" target="_blank" data-event="directions_click" data-label="actionbar">Directions</a>
+  <a href="/order/" data-event="order_click" data-label="actionbar">Order</a>
+  <a href="/book-a-table/" data-event="book_click" data-label="actionbar">Book</a>
+</nav>

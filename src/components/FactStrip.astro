@@ -1,0 +1,23 @@
+---
+import { facts } from '../data/brand-facts';
+import { ok, fullAddress, hoursText, telHref, parkingSentence, dietLabel } from '../lib/facts';
+import TodoChip from './TodoChip.astro';
+const hrs = hoursText();
+const tel = telHref();
+const ps = parkingSentence();
+const diet = dietLabel();
+---
+<dl class="card grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-fact-strip>
+  <div><dt class="text-sm" style="opacity:.75">Address</dt><dd class="font-semibold">{fullAddress()}</dd></div>
+  <div>
+    <dt class="text-sm" style="opacity:.75">Hours</dt>
+    <dd class="font-semibold">{hrs ? <span data-hours>Open {hrs}</span> : <TodoChip label="hours" />}</dd>
+  </div>
+  <div>
+    <dt class="text-sm" style="opacity:.75">Phone</dt>
+    <dd class="font-semibold">{tel ? <a href={tel} data-event="call_click" data-label="factstrip">{facts.phone}</a> : <TodoChip label="phone" />}</dd>
+  </div>
+  {diet && <div><dt class="text-sm" style="opacity:.75">Food</dt><dd class="font-semibold" style="text-transform:capitalize">{diet} South Indian</dd></div>}
+  {ok(facts.costForTwo) && <div><dt class="text-sm" style="opacity:.75">Cost for two</dt><dd class="font-semibold">{facts.costForTwo}</dd></div>}
+  {ps && <div><dt class="text-sm" style="opacity:.75">Parking</dt><dd class="font-semibold">{ps}</dd></div>}
+</dl>

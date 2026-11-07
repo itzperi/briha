@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { facts } from '../data/brand-facts';
+---
+<BaseLayout title="Terms of Use | Brihadhee, Anna Nagar, Chennai" description="Terms for using the Brihadhee website: menu and price accuracy, booking requests and links to other sites." path="/terms/" breadcrumbs={[{ name: 'Terms', href: '/terms/' }]}>
+  <div class="wrap py-6 max-w-3xl prose-b" style="margin-inline:auto">
+    <h1>Terms of use</h1>
+    <p>Have this page checked by a lawyer before launch.</p>
+    <h2>Menu and prices</h2>
+    <p>We try to keep the menu and prices on this website correct. Dishes and prices can change. The menu at the restaurant is final.</p>
+    <h2>Booking requests</h2>
+    <p>A booking request is not a confirmed booking until {facts.name} confirms it to you.</p>
+    <h2>Delivery and other sites</h2>
+    <p>Delivery apps and other sites that we link to set their own prices, charges and terms.</p>
+  </div>
+</BaseLayout>

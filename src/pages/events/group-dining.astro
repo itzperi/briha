@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { facts } from '../../data/brand-facts';
+import { telHref, waHref } from '../../lib/facts';
+const offered = facts.groupDiningConfirmed;
+const tel = telHref();
+const wa = waHref(`Hi ${facts.name}, I would like to ask about a group booking.`);
+---
+<BaseLayout title="Group Dining in Anna Nagar | Brihadhee" description="Planning a family or office meal in Anna Nagar? Ask Brihadhee about group bookings at W Block Main Road, 3rd Avenue, Chennai." path="/events/group-dining/" noindex={!offered} breadcrumbs={[{ name: 'Group dining', href: '/events/group-dining/' }]}>
+  <div class="wrap py-6 max-w-3xl prose-b" style="margin-inline:auto">
+    <h1>Group dining at Brihadhee, Anna Nagar</h1>
+    <p class="text-lg">For a family get-together or an office lunch, please contact us ahead of time so we can plan seating and food for your group.</p>
+    <p>We will confirm the group sizes we can seat and any advance-order process here once the team has confirmed them.</p>
+    <p class="mt-4 flex flex-wrap gap-3">
+      <a class="btn btn-primary" href="/book-a-table/">Book a table</a>
+      {tel && <a class="btn" href={tel} data-event="call_click" data-label="group">Call {facts.phone}</a>}
+      {wa && <a class="btn btn-accent" href={wa} rel="noopener" target="_blank" data-event="whatsapp_click">WhatsApp</a>}
+    </p>
+  </div>
+</BaseLayout>

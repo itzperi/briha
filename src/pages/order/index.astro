@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import { facts } from '../../data/brand-facts';
+import { ok, telHref, waHref, deliveryPlatforms } from '../../lib/facts';
+import { faqsFor } from '../../data/faq';
+import { faqSchema } from '../../lib/schema';
+
+const tel = telHref();
+const wa = waHref(`Hi ${facts.name}, I would like to place an order.`);
+const swiggy = ok(facts.delivery.swiggy) ? facts.delivery.swiggy! : null;
+const zomato = ok(facts.delivery.zomato) ? facts.delivery.zomato! : null;
+const direct = ok(facts.delivery.direct) ? facts.delivery.direct! : null;
+const any = Boolean(tel || wa || swiggy || zomato || direct);
+const faqs = faqsFor('/order/');
+const platforms = deliveryPlatforms();
+---
+<BaseLayout title="Order Online | Brihadhee, Anna Nagar, Chennai" description="Order from Brihadhee, 3rd Avenue, Anna Nagar, Chennai: delivery apps, WhatsApp or phone. Pick the option that is quickest for you." path="/order/" noindex={!any} breadcrumbs={[{ name: 'Order', href: '/order/' }]} schema={[faqSchema(faqs)]}>
+  <div class="wrap py-6">
+    <h1>Order from Brihadhee</h1>
+    <p class="mt-3 text-lg max-w-3xl">{platforms ? `You can order Brihadhee on ${platforms}, or order directly with us.` : 'Order directly with us.'}</p>
+    {any ? (
+      <div class="grid gap-4 mt-6 sm:grid-cols-2">
+        {swiggy && <a class="btn btn-primary" href={swiggy} rel="noopener" target="_blank" data-event="order_click" data-label="swiggy">Order on Swiggy</a>}
+        {zomato && <a class="btn btn-primary" href={zomato} rel="noopener" target="_blank" data-event="order_click" data-label="zomato">Order on Zomato</a>}
+        {direct && <a class="btn btn-primary" href={direct} rel="noopener" target="_blank" data-event="order_click" data-label="direct">Order direct</a>}
+        {wa && <a class="btn btn-accent" href={wa} rel="noopener" target="_blank" data-event="whatsapp_click">Order on WhatsApp</a>}
+        {tel && <a class="btn" href={tel} data-event="call_click" data-label="order">Call {facts.phone}</a>}
+      </div>
+    ) : (
+      <div class="card mt-6"><p>Ordering options are being set up. Please visit the restaurant.</p></div>
+    )}
+    <p class="mt-6 text-sm" style="opacity:.8">Delivery area, charges and timings are set by each app. Please check them at checkout.</p>
+    {faqs.length > 0 && (<><h2>Ordering questions</h2><FAQ faqs={faqs} /></>)}
+    <p class="mt-6"><a href="/menu/">See the menu</a> · <a href="/book-a-table/">Book a table</a></p>
+  </div>
+</BaseLayout>

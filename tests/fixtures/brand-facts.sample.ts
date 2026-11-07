@@ -1,0 +1,40 @@
+// SAMPLE VALUES FOR TESTING THE BUILD ONLY. Every value here is fake.
+// Used by `npm run build:fixture` (FACTS_FIXTURE=1). Output goes to dist-fixture and is noindex. Never deploy it.
+import type { Facts } from '../../src/data/brand-facts';
+
+export const sample: Facts = {
+  name: 'Brihadhee',
+  alternateNames: ['Brihadhee Restaurant', 'Brihadhee Anna Nagar', 'Brihadhi', 'Brihadee', 'Bruhadhee', 'Brahadhee'],
+  legalName: 'Sample Legal Name',
+  doorNumber: 'New No. W-41 (Old No. W-124)',
+  streetAddress: 'W Block Main Road, 3rd Avenue',
+  locality: 'Anna Nagar',
+  city: 'Chennai',
+  region: 'Tamil Nadu',
+  postalCode: '600040',
+  country: 'IN',
+  landmarks: ['Anna Nagar Tower', 'Anna Nagar Tower Park', 'Anna Nagar Roundtana', 'Anna Nagar East metro', 'VR Chennai'],
+  geo: { lat: 13.085, lng: 80.21 },
+  phone: '+91 00000 00000',
+  whatsapp: '+91 00000 00001',
+  email: 'sample@example.com',
+  hours: [{ days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '07:00', closes: '22:30' }],
+  dietClaim: 'pure-veg',
+  parking: 'street-only',
+  costForTwo: '₹300',
+  priceRange: '₹₹',
+  dosaCount: '100+',
+  payments: 'cash, UPI and cards',
+  reservations: 'yes',
+  bookingLinks: { google: 'https://www.google.com/maps/reserve/sample', eazydiner: 'https://www.eazydiner.com/sample', swiggyDineout: null },
+  bookingForm: true, // exercises the on-site booking form path in tests
+  walkIn: true,
+  groupDiningConfirmed: true,
+  delivery: { swiggy: 'https://www.swiggy.com/sample', zomato: 'https://www.zomato.com/sample', direct: null },
+  socials: { instagram: 'https://www.instagram.com/brihadhee', facebook: null, gbp: 'https://g.page/r/sample/review' },
+  listings: { eazydiner: null, zomato: null, swiggy: null, district: null, justdial: null },
+  fssai: null,
+  signature: ['Dosa varieties, including customised dosa', 'Mini tiffin', 'Nellai (Tirunelveli-style) meals', 'Tamil home-style cooking', 'Filter coffee'],
+  serviceAreas: [],
+  dietaryOptions: { jain: null, vegan: null, glutenFree: null },
+};

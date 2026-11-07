@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-draft/
+dist-fixture/
+.astro/
+.env
+.env.*
+!.env.example
+.indexnow-manifest.json
+*.log

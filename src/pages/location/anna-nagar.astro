@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FactStrip from '../../components/FactStrip.astro';
+import MapEmbed from '../../components/MapEmbed.astro';
+import FAQ from '../../components/FAQ.astro';
+import Photo from '../../components/Photo.astro';
+import { facts } from '../../data/brand-facts';
+import { answerSummary, parkingSentence, directionsUrl, fullAddress } from '../../lib/facts';
+import { restaurantSchema, faqSchema } from '../../lib/schema';
+import { faqsFor } from '../../data/faq';
+
+const faqs = faqsFor('/location/anna-nagar/');
+const ps = parkingSentence();
+---
+<BaseLayout title="Brihadhee, 3rd Avenue, Anna Nagar | Address and Map" description="Find Brihadhee at W Block Main Road, 3rd Avenue, Anna Nagar, Chennai 600040: address, map, directions and nearby landmarks." path="/location/anna-nagar/" breadcrumbs={[{ name: 'Location', href: '/location/anna-nagar/' }]} schema={[restaurantSchema(), faqSchema(faqs)]}>
+  <div class="wrap py-6">
+    <h1>Brihadhee in Anna Nagar, Chennai: address and directions</h1>
+    <p class="mt-3 text-lg max-w-3xl">{answerSummary()}</p>
+    <div class="mt-6"><FactStrip /></div>
+    <div class="grid gap-6 mt-6 md:grid-cols-2">
+      <MapEmbed />
+      <div>
+        <h2 style="margin-top:0">How to find us</h2>
+        <p>We are on {facts.streetAddress}, {facts.locality}. Look for {facts.name} at {facts.doorNumber}.</p>
+        <p class="mt-3">Landmarks that help you find us:</p>
+        <ul class="prose-b">{facts.landmarks.map((l) => <li>{l}</li>)}</ul>
+        <p class="mt-3 text-sm" style="opacity:.8">Walking times depend on where you start. Use the directions button for live routing.</p>
+        {ps && <p class="mt-3"><strong>Parking:</strong> {ps}.</p>}
+        <p class="mt-4"><a class="btn btn-primary" href={directionsUrl()} target="_blank" rel="noopener" data-event="directions_click" data-label="location">Get directions</a></p>
+      </div>
+    </div>
+    <div class="mt-6"><Photo name="location-entrance" alt={`The entrance of ${facts.name} on ${facts.streetAddress}, ${facts.locality}`} label="Photo: restaurant entrance from the street, 1600x900" /></div>
+    {faqs.length > 0 && (<><h2>Location questions</h2><FAQ faqs={faqs} /></>)}
+    <p class="mt-6"><a href="/menu/">Menu</a> · <a href="/order/">Order</a> · <a href="/book-a-table/">Book a table</a></p>
+  </div>
+</BaseLayout>

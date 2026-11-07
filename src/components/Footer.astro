@@ -1,0 +1,41 @@
+---
+import { facts } from '../data/brand-facts';
+import { ok, fullAddress, hoursText, telHref } from '../lib/facts';
+const year = new Date().getFullYear();
+const alsoSearched = facts.alternateNames.filter((n) => !/restaurant|anna nagar/i.test(n));
+const hrs = hoursText();
+const tel = telHref();
+---
+<footer class="bg-leaf-dark text-cream mt-16" style="background:var(--color-leaf-dark);color:var(--color-cream)">
+  <div class="wrap py-10 grid gap-8 md:grid-cols-3">
+    <div>
+      <p style="font-family:'Fraunces Variable',serif;font-size:1.4rem;font-weight:700;color:#fff;margin:0">{facts.name}</p>
+      <p class="mt-2">{fullAddress()}</p>
+      {hrs && <p class="mt-2">Open {hrs}.</p>}
+      {tel && <p class="mt-2"><a href={tel} style="color:#fff" data-event="call_click" data-label="footer">{facts.phone}</a></p>}
+    </div>
+    <nav aria-label="Footer">
+      <ul style="list-style:none;margin:0;padding:0" class="grid gap-1">
+        <li><a style="color:#fff" href="/menu/">Menu</a></li>
+        <li><a style="color:#fff" href="/order/">Order</a></li>
+        <li><a style="color:#fff" href="/book-a-table/">Book a table</a></li>
+        <li><a style="color:#fff" href="/location/anna-nagar/">Location</a></li>
+        <li><a style="color:#fff" href="/gallery/">Gallery</a></li>
+        <li><a style="color:#fff" href="/reviews/">Reviews</a></li>
+        <li><a style="color:#fff" href="/faq/">FAQ</a></li>
+        <li><a style="color:#fff" href="/about/">About</a></li>
+        <li><a style="color:#fff" href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="text-sm">
+      <p>Also searched as {alsoSearched.join(', ')}.</p>
+      <p class="mt-2">{facts.name} is a restaurant in {facts.locality}, {facts.city}. It is not connected with Brihadeeswarar Temple, Thanjavur.</p>
+      <p class="mt-2">
+        <a style="color:#fff" href="/privacy/">Privacy</a> ·
+        <a style="color:#fff" href="/terms/">Terms</a> ·
+        <a style="color:#fff" href="/accessibility/">Accessibility</a>
+      </p>
+      <p class="mt-2">© {year} {facts.name}</p>
+    </div>
+  </div>
+</footer>

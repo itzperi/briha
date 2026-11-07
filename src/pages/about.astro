@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import { facts } from '../data/brand-facts';
+import { ok, dietLabel } from '../lib/facts';
+import { faqsFor } from '../data/faq';
+import { faqSchema } from '../lib/schema';
+const faqs = faqsFor('/about/');
+const diet = dietLabel();
+---
+<BaseLayout title="About Brihadhee | South Indian Restaurant, Anna Nagar" description="About Brihadhee, a South Indian restaurant on W Block Main Road, 3rd Avenue, Anna Nagar, Chennai: what we serve and how to tell us apart from similar names." path="/about/" breadcrumbs={[{ name: 'About', href: '/about/' }]} schema={[faqSchema(faqs)]}>
+  <div class="wrap py-6 max-w-3xl prose-b" style="margin-inline:auto">
+    <h1>About Brihadhee</h1>
+    <p class="text-lg">Brihadhee is a {diet ? diet + ' ' : ''}South Indian restaurant in {facts.locality}, {facts.city}. We cook Tamil home-style food, with dosa, mini tiffin, Nellai (Tirunelveli-style) meals and filter coffee.</p>
+    <h2>What we are known for</h2>
+    <ul>{facts.signature.map((s) => <li>{s}</li>)}</ul>
+    {ok(facts.fssai) && <p><strong>FSSAI licence:</strong> {facts.fssai}</p>}
+    <h2>Our story</h2>
+    <p>We will share the story of the restaurant and the people behind it here, in the owners' own words.</p>
+    <h2>Name and spelling</h2>
+    <p>People also search for us as {facts.alternateNames.filter((n) => !/restaurant|anna nagar/i.test(n)).join(', ')}. {facts.name} is a restaurant. It is not connected with Brihadeeswarar Temple in Thanjavur or with baby-name websites that use a similar spelling.</p>
+    <h2>Visit us</h2>
+    <p><a href="/location/anna-nagar/">Address, map and directions</a> · <a href="/menu/">Menu</a> · <a href="/contact/">Contact</a></p>
+    {faqs.length > 0 && (<><h2>Questions</h2><FAQ faqs={faqs} /></>)}
+  </div>
+</BaseLayout>

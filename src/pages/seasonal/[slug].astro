@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { seasonal } from '../../data/seasonal';
+export function getStaticPaths() {
+  return seasonal.map((s) => ({ params: { slug: s.slug }, props: { page: s } }));
+}
+const { page } = Astro.props;
+const path = `/seasonal/${page.slug}/`;
+---
+<BaseLayout title={page.title} description={page.description} {path} breadcrumbs={[{ name: page.h1, href: path }]}>
+  <article class="wrap py-6 max-w-3xl prose-b" style="margin-inline:auto">
+    <h1>{page.h1}</h1>
+    {page.body.map((p) => <p>{p}</p>)}
+    <p><a class="btn btn-primary" href="/menu/">See the menu</a> <a class="btn" href="/order/">Order</a></p>
+  </article>
+</BaseLayout>

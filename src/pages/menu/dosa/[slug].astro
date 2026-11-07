@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Photo from '../../../components/Photo.astro';
+import { dishPages, rupees } from '../../../data/menu';
+import { facts } from '../../../data/brand-facts';
+import { menuSchema } from '../../../lib/schema';
+
+export function getStaticPaths() {
+  return dishPages()
+    .filter((d) => d.section === 'dosa')
+    .map((d) => ({ params: { slug: d.slug! }, props: { item: d } }));
+}
+const { item } = Astro.props;
+const title = `${item.nameEn} in Anna Nagar | Brihadhee`.slice(0, 60);
+const description = `${item.nameEn} at Brihadhee, W Block Main Road, 3rd Avenue, Anna Nagar, Chennai. ${item.description}`.slice(0, 160);
+---
+<BaseLayout {title} {description} path={`/menu/dosa/${item.slug}/`} breadcrumbs={[{ name: 'Menu', href: '/menu/' }, { name: 'Dosa', href: '/menu/dosa/' }, { name: item.nameEn, href: `/menu/dosa/${item.slug}/` }]} schema={[menuSchema(['dosa'])]}>
+  <article class="wrap py-6 prose-b">
+    <h1>{item.nameEn} at {facts.name}, Anna Nagar</h1>
+    <p class="text-lg">{item.description}</p>
+    <div class="mt-4"><Photo name={item.slug!} alt={item.imageAlt ?? item.nameEn} label={`Photo: ${item.nameEn}, 1600x1200`} eager /></div>
+    {item.price !== null && <p class="mt-3"><strong>Price:</strong> {rupees(item.price)}</p>}
+    <h2>About this dish</h2>
+    <p>{item.longDescription}</p>
+    <p class="mt-6"><a href="/menu/dosa/">All dosa varieties</a> · <a href="/order/">Order</a> · <a href="/location/anna-nagar/">Find us</a></p>
+  </article>
+</BaseLayout>

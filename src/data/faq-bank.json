@@ -1,0 +1,1301 @@
+[
+  {
+    "id": "faq-001",
+    "q": "Is Brihadhee pure vegetarian?",
+    "a": "Yes, Brihadhee is a pure vegetarian South Indian restaurant in Anna Nagar, Chennai. Every dish on the menu is vegetarian, from dosa and idli to Nellai meals and paneer poppers. Some third-party listings tag it differently, so rely on Brihadhee's own website and Google profile. See the menu for the full list of dishes.",
+    "pages": [
+      "/",
+      "/faq/",
+      "/menu/"
+    ],
+    "group": "About Brihadhee",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-002",
+    "q": "What is Brihadhee famous for?",
+    "a": "Brihadhee in Anna Nagar, Chennai, is known for its wide range of dosa varieties, including customised dosa, along with mini tiffin, Nellai (Tirunelveli) meals and Tamil home-style cooking. Filter coffee, paanai parotta and kothu idiyappam are also on the menu. First-timers can start with the mini tiffin to sample several items.",
+    "pages": [
+      "/",
+      "/about/",
+      "/faq/"
+    ],
+    "group": "About Brihadhee",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-003",
+    "q": "Where is Brihadhee located?",
+    "a": "Brihadhee is at New No. W-41 (Old No. W-124), W Block Main Road, 3rd Avenue, Anna Nagar, Chennai 600040. Useful landmarks are Anna Nagar Tower, Anna Nagar Tower Park, Anna Nagar Roundtana, Anna Nagar East metro and VR Chennai. Open the location page for a map and directions.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/contact/",
+      "/faq/"
+    ],
+    "group": "Location and directions",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-004",
+    "q": "What are Brihadhee's timings?",
+    "a": "Brihadhee is open {HOURS_TEXT}. Because third-party listings show different times, treat this as the confirmed schedule for the Anna Nagar restaurant. Timings can change on festival days, so check the calendar or call {PHONE} before a special trip. You can also see live status on Google Maps.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/contact/",
+      "/faq/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT",
+      "PHONE"
+    ]
+  },
+  {
+    "id": "faq-005",
+    "q": "Is Brihadhee open on Sundays?",
+    "a": "Brihadhee's days and hours, including Sundays, are listed here: {HOURS_TEXT}. If Sunday is not mentioned in that line, please call {PHONE} to confirm before you visit. Sundays are often busy at family restaurants, so reaching Brihadhee in Anna Nagar early, or asking about a table in advance, can help.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/faq/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT",
+      "PHONE"
+    ]
+  },
+  {
+    "id": "faq-006",
+    "q": "Does Brihadhee have parking?",
+    "a": "{PARKING_STATEMENT} The restaurant is on W Block Main Road, 3rd Avenue, Anna Nagar, near the Anna Nagar Tower area. If you are travelling by metro, Anna Nagar East station is a listed landmark nearby. The location page has directions, landmarks and the nearest metro stations to help you plan your arrival.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/faq/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PARKING_STATEMENT"
+    ]
+  },
+  {
+    "id": "faq-007",
+    "q": "Can I book a table at Brihadhee?",
+    "a": "Table booking at Brihadhee works this way: {RESERVATION_METHOD}. For a family or group, mention your party size, date and arrival time. Booking ahead is sensible for weekends and festival days, when restaurants are usually busier. The book-a-table page shows the latest booking option for the Anna Nagar restaurant.",
+    "pages": [
+      "/book-a-table/",
+      "/faq/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "RESERVATION_METHOD"
+    ]
+  },
+  {
+    "id": "faq-008",
+    "q": "Does Brihadhee deliver?",
+    "a": "Yes, Brihadhee offers delivery, which you can order through Swiggy and Zomato. Delivery area, charges and timings are set by each app, so check them at checkout. If you prefer to pick up your food from the Anna Nagar restaurant, takeaway is also available. The order page links to both apps.",
+    "pages": [
+      "/order/",
+      "/faq/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-009",
+    "q": "Is Brihadhee on Swiggy or Zomato?",
+    "a": "Yes, Brihadhee is listed on both Swiggy and Zomato, so you can order its South Indian dishes for delivery to your address. Menu items, prices and availability on the apps can differ from the restaurant, so compare before ordering. The order page has direct links to Swiggy and Zomato for Brihadhee, Anna Nagar.",
+    "pages": [
+      "/order/",
+      "/order/swiggy/",
+      "/order/zomato/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-010",
+    "q": "What is the mini tiffin price at Brihadhee?",
+    "a": "The mini tiffin at Brihadhee costs {MINI_TIFFIN_PRICE}. It is a small-portion combo plate that lets you taste several South Indian tiffin items in one order. Prices can change, so check the mini tiffin menu page or the Swiggy and Zomato listings for the current figure before you order from the Anna Nagar restaurant.",
+    "pages": [
+      "/menu/mini-tiffin/",
+      "/faq/"
+    ],
+    "group": "Prices, payments and offers",
+    "onlyIfTrue": false,
+    "tokens": [
+      "MINI_TIFFIN_PRICE"
+    ]
+  },
+  {
+    "id": "faq-011",
+    "q": "What is included in the mini tiffin?",
+    "a": "A mini tiffin is usually a combo plate of small portions of tiffin items such as idli, vada, pongal and kesari. Brihadhee's exact combination and portion sizes are listed on its mini tiffin menu page, so check it before ordering. It is a good first order if you want variety without committing to a full meal.",
+    "pages": [
+      "/menu/mini-tiffin/",
+      "/guides/what-is-mini-tiffin/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-012",
+    "q": "How many dosa varieties does Brihadhee have?",
+    "a": "Brihadhee's menu lists {DOSA_COUNT} dosa varieties, and you can also ask for a customised dosa. The full list of dosas, with descriptions and prices, is on the dosa menu page. If you are unsure where to start, ask the team at the Anna Nagar restaurant to suggest a dosa based on your taste.",
+    "pages": [
+      "/menu/dosa/",
+      "/guides/types-of-dosa/",
+      "/faq/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": [
+      "DOSA_COUNT"
+    ]
+  },
+  {
+    "id": "faq-013",
+    "q": "Can I customise my dosa at Brihadhee?",
+    "a": "Yes, customised dosa is one of Brihadhee's specialities in Anna Nagar: instead of choosing only from fixed menu items, you can ask for a dosa made to your preference. The choices available on the day are best confirmed with the team when you order. The dosa menu page explains the options and prices.",
+    "pages": [
+      "/menu/dosa/",
+      "/faq/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-014",
+    "q": "What are Nellai meals at Brihadhee?",
+    "a": "Nellai meals are a traditional vegetarian meal style from Tirunelveli, known as Nellai in Tamil Nadu, usually served with rice and a spread of gravies, curries, pickle and sides. Brihadhee in Anna Nagar serves Nellai meals as one of its signature offerings. The Nellai meals page lists what comes with the meal.",
+    "pages": [
+      "/menu/nellai-meals/",
+      "/guides/nellai-meals-explained/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-015",
+    "q": "What is sodhi?",
+    "a": "Sodhi is a mild, coconut-based Tirunelveli (Nellai) gravy, usually made with vegetables and lightly spiced, using coconut milk or coconut paste. It is commonly eaten with rice, idli or idiyappam. Brihadhee in Anna Nagar lists sodhi among its dishes. The sodhi guide explains how it differs from sambar and salna.",
+    "pages": [
+      "/guides/what-is-sodhi/",
+      "/menu/nellai-meals/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-016",
+    "q": "What is salna?",
+    "a": "Salna is a spiced gravy served in Tamil Nadu with parotta, idiyappam, dosa and idli. A vegetarian salna is made with vegetables, coconut and spices, though recipes vary from kitchen to kitchen. Brihadhee in Anna Nagar lists salna among its dishes. Ask the team which items it is served with.",
+    "pages": [
+      "/menu/parotta-kothu/",
+      "/faq/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-017",
+    "q": "What is ulundhu kali?",
+    "a": "Ulundhu kali is a traditional Tamil dish made from urad dal (ulundhu) and rice, usually cooked with jaggery and sesame oil or ghee into a soft, dense, porridge-like preparation. It is commonly seen as home-style food. Brihadhee in Anna Nagar lists ulundhu kali among its dishes.",
+    "pages": [
+      "/guides/ulundhu-kali/",
+      "/faq/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-018",
+    "q": "What is paanai parotta?",
+    "a": "Paanai parotta is a Tamil-style layered parotta, commonly described as named after its pot-like (paanai) shape, and usually eaten with salna or a vegetable gravy. Details of the shape and style vary by kitchen. Brihadhee in Anna Nagar lists paanai parotta; the parotta page shows how it is served.",
+    "pages": [
+      "/guides/paanai-parotta/",
+      "/menu/parotta-kothu/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-019",
+    "q": "What is kothu idiyappam?",
+    "a": "Kothu idiyappam is a Tamil dish in which idiyappam, steamed rice-flour strands, is chopped and tossed on a hot griddle with spices, vegetables and a gravy such as salna, much like kothu parotta. Brihadhee in Anna Nagar serves a vegetarian version; the parotta and kothu page has details.",
+    "pages": [
+      "/guides/kothu-idiyappam/",
+      "/menu/parotta-kothu/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-020",
+    "q": "What is filter coffee?",
+    "a": "Filter coffee is South Indian coffee made by letting hot water drip slowly through ground coffee, often blended with chicory, in a metal filter. The strong decoction is mixed with hot milk and sugar and usually served frothy in a steel tumbler and davara. Brihadhee in Anna Nagar serves filter coffee.",
+    "pages": [
+      "/guides/filter-coffee-guide/",
+      "/menu/filter-coffee/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-021",
+    "q": "Is Brihadhee good for families?",
+    "a": "Yes, Brihadhee suits families in Anna Nagar, as the menu is entirely vegetarian and offers soft tiffin items such as idli and pongal, many dosas and Nellai meals, so everyone can find something. Customised dosa also lets each person order to taste. For a larger family, ask about a table in advance.",
+    "pages": [
+      "/",
+      "/book-a-table/",
+      "/faq/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-022",
+    "q": "Is Brihadhee good for groups?",
+    "a": "Brihadhee in Anna Nagar can work well for groups because the shareable range includes mini tiffin, dosa varieties, parotta and kothu idiyappam, all vegetarian. For large parties, arrange a table ahead using {RESERVATION_METHOD}. The group dining page gives more guidance on party size and timing.",
+    "pages": [
+      "/events/group-dining/",
+      "/book-a-table/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": [
+      "RESERVATION_METHOD"
+    ]
+  },
+  {
+    "id": "faq-023",
+    "q": "Is Brihadhee good for office lunch?",
+    "a": "Brihadhee is a practical choice for an office lunch in Anna Nagar, since Nellai meals, mini tiffin and parotta dishes give vegetarian options for mixed teams. Check opening times, which are {HOURS_TEXT}, and consider ordering through Swiggy or Zomato on busy days. For a bigger team, contact the restaurant first.",
+    "pages": [
+      "/menu/lunch-meals/",
+      "/order/",
+      "/events/group-dining/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-024",
+    "q": "Is Brihadhee good for breakfast?",
+    "a": "Brihadhee's tiffin items such as idli, vada, pongal and dosa, plus filter coffee, are classic South Indian breakfast food. Opening time decides whether you can have breakfast there: Brihadhee is open {HOURS_TEXT}. Check that line first, then see the breakfast menu page for dishes in Anna Nagar.",
+    "pages": [
+      "/menu/breakfast/",
+      "/menu/tiffin/",
+      "/faq/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-025",
+    "q": "Is Brihadhee good for dinner?",
+    "a": "Brihadhee's dosa, paanai parotta, kothu parotta and kothu idiyappam suit a light South Indian dinner. Whether you can dine in the evening depends on closing time, because Brihadhee is open {HOURS_TEXT}. For a later meal, ordering through Swiggy or Zomato is another option, subject to the apps' own timings.",
+    "pages": [
+      "/menu/dinner/",
+      "/menu/parotta-kothu/",
+      "/faq/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-026",
+    "q": "Is Brihadhee budget-friendly?",
+    "a": "Brihadhee's price band is {PRICE_BAND}, which helps you judge whether it fits your budget. Smaller portions such as the mini tiffin let you try several items without ordering a full meal. For two people in Anna Nagar, the typical bill is {PRICE_FOR_TWO}. Full item prices are on the menu page.",
+    "pages": [
+      "/menu/",
+      "/faq/"
+    ],
+    "group": "Prices, payments and offers",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PRICE_BAND",
+      "PRICE_FOR_TWO"
+    ]
+  },
+  {
+    "id": "faq-027",
+    "q": "What should a first-time visitor order at Brihadhee?",
+    "a": "For a first visit to Brihadhee in Anna Nagar, start with the mini tiffin to taste several items, add a dosa from the menu or a customised one, and finish with filter coffee or kesari. If you want a full meal, try Nellai meals instead. Ask the team for suggestions.",
+    "pages": [
+      "/menu/mini-tiffin/",
+      "/menu/dosa/",
+      "/faq/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-028",
+    "q": "What is the best dosa at Brihadhee?",
+    "a": "There is no single best dosa, because it depends on your taste. If you like crisp, thin dosas, try a roast-style dosa; for soft, spongy ones, try a set dosa, if available on the menu. At Brihadhee in Anna Nagar, customised dosa lets you design your own. The dosa menu page lists the varieties.",
+    "pages": [
+      "/menu/dosa/",
+      "/guides/types-of-dosa/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-029",
+    "q": "What are the best vegetarian dishes at Brihadhee?",
+    "a": "Brihadhee's signature vegetarian dishes are the mini tiffin, customised dosa, Nellai meals, paanai parotta, kothu idiyappam and filter coffee. Together they show the Tamil home-style range of this Anna Nagar restaurant. Paneer poppers are an option for a snack. The menu page lists everything, with descriptions.",
+    "pages": [
+      "/menu/",
+      "/faq/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-030",
+    "q": "Is Brihadhee near Anna Nagar Tower?",
+    "a": "Yes, Brihadhee is in the Anna Nagar Tower area, on W Block Main Road, 3rd Avenue. Anna Nagar Tower and Anna Nagar Tower Park are among the landmarks used to find it. Exact walking time depends on where you start. The location page has a map and written directions.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/faq/"
+    ],
+    "group": "Location and directions",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-031",
+    "q": "Is Brihadhee near Anna Nagar East metro?",
+    "a": "Brihadhee is in Anna Nagar, and Anna Nagar East metro is one of the nearby landmarks used for directions. The Anna Nagar Tower metro station is also in the area. Walking time or auto fare depends on your exit, so check the location page for the map and the route from the station.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/faq/"
+    ],
+    "group": "Location and directions",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-032",
+    "q": "Does Brihadhee serve Tamil home-style food?",
+    "a": "Yes, Brihadhee serves Tamil home-style, sometimes called grandma-style, vegetarian cooking in Anna Nagar. Dishes such as sodhi, salna, ulundhu kali, idiyappam and Nellai meals follow familiar Tamil home recipes. Taste varies by dish, so ask the team which items are closest to home cooking. The about page tells more.",
+    "pages": [
+      "/about/",
+      "/menu/nellai-meals/",
+      "/faq/"
+    ],
+    "group": "About Brihadhee",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-033",
+    "q": "Does Brihadhee serve Tirunelveli-style food?",
+    "a": "Yes, Brihadhee serves Tirunelveli-style, or Nellai, vegetarian food in Anna Nagar, including Nellai meals and dishes such as sodhi. Nellai cooking is commonly known for coconut-based gravies and home-style flavours. Visit the Nellai meals page to see what comes with the meal and how it is served.",
+    "pages": [
+      "/menu/nellai-meals/",
+      "/guides/nellai-meals-explained/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-034",
+    "q": "Does Brihadhee serve filter coffee?",
+    "a": "Yes, Brihadhee serves filter coffee at its Anna Nagar restaurant, a South Indian classic that pairs well with idli, vada, pongal and dosa. Coffee availability follows opening hours, so check {HOURS_TEXT} before visiting. The filter coffee page has details and suggestions for what to order with it.",
+    "pages": [
+      "/menu/filter-coffee/",
+      "/guides/filter-coffee-guide/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-035",
+    "q": "Does Brihadhee serve idiyappam?",
+    "a": "Yes, Brihadhee serves idiyappam, the steamed rice-flour string hoppers popular across Tamil Nadu, and also kothu idiyappam. Idiyappam is often eaten with sodhi, salna, or coconut milk and sugar. Ask the team in Anna Nagar which accompaniments are available that day. The parotta and kothu page has the full list.",
+    "pages": [
+      "/menu/parotta-kothu/",
+      "/guides/kothu-idiyappam/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-036",
+    "q": "Does Brihadhee serve paanai parotta?",
+    "a": "Yes, paanai parotta is among the parotta dishes at Brihadhee in Anna Nagar, along with kothu parotta. It is typically eaten with a vegetarian gravy such as salna. Availability can vary by time of day, so check the parotta and kothu page or ask the team before you order.",
+    "pages": [
+      "/menu/parotta-kothu/",
+      "/guides/paanai-parotta/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-037",
+    "q": "Does Brihadhee serve kothu parotta?",
+    "a": "Yes, Brihadhee serves a vegetarian kothu parotta in Anna Nagar. Kothu parotta is parotta shredded and stir-fried on a hot griddle with spices, vegetables and gravy, a popular Tamil street-food style dish. You can pair it with kothu idiyappam on the same table. See the parotta and kothu page.",
+    "pages": [
+      "/menu/parotta-kothu/",
+      "/faq/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-038",
+    "q": "Does Brihadhee serve Jain food?",
+    "a": "Brihadhee's Jain food options are as follows: {JAIN_OPTION}. Jain cooking usually avoids onion, garlic and root vegetables, which many South Indian dishes use, so please confirm exact dishes with the Anna Nagar team before ordering. Brihadhee is a pure vegetarian restaurant, but pure vegetarian does not automatically mean Jain.",
+    "pages": [
+      "/faq/",
+      "/menu/"
+    ],
+    "group": "Diet and dietary needs",
+    "onlyIfTrue": true,
+    "tokens": [
+      "JAIN_OPTION"
+    ]
+  },
+  {
+    "id": "faq-039",
+    "q": "Does Brihadhee serve vegan food?",
+    "a": "Brihadhee's vegan options are as follows: {VEGAN_OPTION}. Brihadhee is pure vegetarian, but many South Indian dishes use ghee, butter, milk, curd or paneer, so vegan diners should confirm ingredients with the Anna Nagar team before ordering. Ask whether ghee or butter can be left out of your dish.",
+    "pages": [
+      "/faq/",
+      "/menu/"
+    ],
+    "group": "Diet and dietary needs",
+    "onlyIfTrue": true,
+    "tokens": [
+      "VEGAN_OPTION"
+    ]
+  },
+  {
+    "id": "faq-040",
+    "q": "Does Brihadhee serve gluten-free food?",
+    "a": "Brihadhee's gluten-free options are as follows: {GLUTEN_FREE_OPTION}. Idli and dosa are commonly made from rice and lentils, but parotta is usually made with wheat flour, and shared kitchen equipment can cause cross-contact. If you have coeliac disease or a strict allergy, speak to the Anna Nagar team before ordering.",
+    "pages": [
+      "/faq/",
+      "/menu/"
+    ],
+    "group": "Diet and dietary needs",
+    "onlyIfTrue": true,
+    "tokens": [
+      "GLUTEN_FREE_OPTION"
+    ]
+  },
+  {
+    "id": "faq-041",
+    "q": "What is Brihadhee's PIN code and full address?",
+    "a": "Brihadhee's PIN code is 600040, and the full address is New No. W-41 (Old No. W-124), W Block Main Road, 3rd Avenue, Anna Nagar, Chennai. For GPS or a delivery rider, search \"Brihadhee Anna Nagar\" on Google Maps, or share the landmark Anna Nagar Tower. The contact page also lists the address.",
+    "pages": [
+      "/contact/",
+      "/location/anna-nagar/"
+    ],
+    "group": "Location and directions",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-042",
+    "q": "How do I find Brihadhee on W Block Main Road?",
+    "a": "Head to W Block Main Road in Anna Nagar and look for 3rd Avenue, where Brihadhee is at New No. W-41. Anna Nagar Tower and Anna Nagar Roundtana are useful landmarks, and you can also search \"Brihadhee Anna Nagar\" on Google Maps. Directions from nearby landmarks are on the location page.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/faq/"
+    ],
+    "group": "Location and directions",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-043",
+    "q": "Which landmarks are near Brihadhee in Anna Nagar?",
+    "a": "Landmarks used to locate Brihadhee are Anna Nagar Tower, Anna Nagar Tower Park, Anna Nagar Roundtana, Anna Nagar East metro and VR Chennai, all in or around Anna Nagar, Chennai. Distances differ depending on where you start, so check the location page for a map and written directions before you leave.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/guides/anna-nagar-food-guide/"
+    ],
+    "group": "Location and directions",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-044",
+    "q": "Is Brihadhee near Anna Nagar Roundtana or VR Chennai?",
+    "a": "Both Anna Nagar Roundtana and VR Chennai are listed as landmarks for reaching Brihadhee on W Block Main Road, 3rd Avenue, Anna Nagar. Exact distance depends on your route and traffic, so use Google Maps for live directions. The location page gives written directions from major landmarks in the area.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/faq/"
+    ],
+    "group": "Location and directions",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-045",
+    "q": "Is Brihadhee on Google Maps?",
+    "a": "Yes, Brihadhee has a Google Business Profile, so you can find it on Google Maps by searching \"Brihadhee Anna Nagar\". The profile link is {GBP_URL}. Use it for directions, photos, current timings and reviews from other diners, and to call the restaurant in Anna Nagar before you visit.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/contact/"
+    ],
+    "group": "Location and directions",
+    "onlyIfTrue": false,
+    "tokens": [
+      "GBP_URL"
+    ]
+  },
+  {
+    "id": "faq-046",
+    "q": "What is Brihadhee's phone number?",
+    "a": "You can call Brihadhee in Anna Nagar on {PHONE}. Please call during opening hours, which are {HOURS_TEXT}. Call to check timings, table availability, a group visit or a dish before you travel. For an order, you can also use Swiggy or Zomato, and the contact page lists all options.",
+    "pages": [
+      "/contact/",
+      "/faq/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PHONE",
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-047",
+    "q": "Can I contact Brihadhee on WhatsApp?",
+    "a": "You can message Brihadhee on WhatsApp at {WHATSAPP}. It is a handy way to ask about dish availability, group visits or directions to the Anna Nagar restaurant without making a call. For urgent changes on the day, a phone call is faster. Please never share card or bank details over chat.",
+    "pages": [
+      "/contact/",
+      "/book-a-table/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "WHATSAPP"
+    ]
+  },
+  {
+    "id": "faq-048",
+    "q": "Why do different websites show different timings or prices for Brihadhee?",
+    "a": "Third-party listing sites are updated by different people and can lag behind the restaurant. For current details about Brihadhee in Anna Nagar, use this website or call {PHONE}; the confirmed timings are {HOURS_TEXT}. Differences in tags, parking or price on other sites should be treated as unconfirmed until you check.",
+    "pages": [
+      "/contact/",
+      "/location/anna-nagar/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PHONE",
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-049",
+    "q": "Does Brihadhee offer takeaway?",
+    "a": "Yes, Brihadhee offers takeaway from its Anna Nagar restaurant, along with dine-in and delivery. For a smooth pickup, check the menu page first, then ask at the counter, or call {PHONE} to confirm before you arrive. Crisp items such as dosa are best eaten soon after they are packed.",
+    "pages": [
+      "/order/",
+      "/faq/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PHONE"
+    ]
+  },
+  {
+    "id": "faq-050",
+    "q": "How do I order Brihadhee food online?",
+    "a": "You can order Brihadhee food online through Swiggy or Zomato, where the Anna Nagar restaurant is listed. Open the order page for direct links, or search \"Brihadhee Anna Nagar\" in either app. Delivery time, charges and available dishes are shown at checkout. Takeaway and dine-in are separate options.",
+    "pages": [
+      "/order/",
+      "/order/swiggy/",
+      "/order/zomato/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-051",
+    "q": "What are Brihadhee's Swiggy and Zomato links?",
+    "a": "Brihadhee's Swiggy page is {SWIGGY_URL} and its Zomato page is {ZOMATO_URL}. Both list the Anna Nagar restaurant for delivery. Check that the listing shows W Block Main Road, 3rd Avenue and the name Brihadhee before you order, because similar names can appear. The order page keeps these links updated.",
+    "pages": [
+      "/order/",
+      "/order/swiggy/",
+      "/order/zomato/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": [
+      "SWIGGY_URL",
+      "ZOMATO_URL"
+    ]
+  },
+  {
+    "id": "faq-052",
+    "q": "Is Brihadhee listed on EazyDiner, District or Justdial?",
+    "a": "Yes, Brihadhee also appears on EazyDiner, District and Justdial, in addition to Google, Swiggy and Zomato. These are third-party listings, so details such as timings, price or tags may differ from Brihadhee's own website. For dependable details about the Anna Nagar restaurant, use this website or Google Maps.",
+    "pages": [
+      "/reviews/",
+      "/contact/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-053",
+    "q": "Does Brihadhee accept UPI and cards?",
+    "a": "Brihadhee accepts these payment methods: {PAYMENTS}. If you prefer a particular method, such as UPI or cards, confirm with the Anna Nagar team before ordering, especially for a large group bill. Online orders through Swiggy and Zomato follow the payment options shown in each app.",
+    "pages": [
+      "/faq/",
+      "/contact/"
+    ],
+    "group": "Prices, payments and offers",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PAYMENTS"
+    ]
+  },
+  {
+    "id": "faq-054",
+    "q": "Does Brihadhee have any offers or discounts?",
+    "a": "Brihadhee's current offer is: {OFFER}. Offers can change or end, so check the details before you visit or order. Discounts shown on Swiggy, Zomato or other apps are set separately by those platforms and may differ. Follow Instagram, @brihadhee, for announcements about the Anna Nagar restaurant.",
+    "pages": [
+      "/",
+      "/order/"
+    ],
+    "group": "Prices, payments and offers",
+    "onlyIfTrue": false,
+    "tokens": [
+      "OFFER"
+    ]
+  },
+  {
+    "id": "faq-055",
+    "q": "What is the average cost for two at Brihadhee?",
+    "a": "The average cost for two at Brihadhee is {PRICE_FOR_TWO}, for dine-in at the Anna Nagar restaurant. The final bill depends on what you order: a mini tiffin and filter coffee will cost differently from a full Nellai meals order. Check the menu page for item prices before you visit.",
+    "pages": [
+      "/menu/",
+      "/faq/"
+    ],
+    "group": "Prices, payments and offers",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PRICE_FOR_TWO"
+    ]
+  },
+  {
+    "id": "faq-056",
+    "q": "Should I book a table at Brihadhee on weekends?",
+    "a": "Whether you need to book depends on how many people are coming. Table booking at Brihadhee works this way: {RESERVATION_METHOD}. For families and groups in Anna Nagar, booking ahead is wise on Sundays and festival days, when restaurants are usually busier. For two or three people, a walk-in may be fine.",
+    "pages": [
+      "/book-a-table/",
+      "/faq/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "RESERVATION_METHOD"
+    ]
+  },
+  {
+    "id": "faq-057",
+    "q": "How can I plan a group meal or small celebration at Brihadhee?",
+    "a": "For a group meal or small celebration at Brihadhee in Anna Nagar, contact the restaurant in advance through {RESERVATION_METHOD}. Share your party size, date, arrival time and food preferences, such as no onion or garlic. A confirmed plan avoids waiting at the door. The group dining page has more information.",
+    "pages": [
+      "/events/group-dining/",
+      "/book-a-table/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "RESERVATION_METHOD"
+    ]
+  },
+  {
+    "id": "faq-058",
+    "q": "What is the best time to visit Brihadhee to avoid a crowd?",
+    "a": "Brihadhee has not published its busiest hours, but at most restaurants weekday mid-morning and mid-afternoon are usually quieter than weekend lunch and evenings. For a calmer visit to the Anna Nagar restaurant, avoid Sunday lunch and festival days, or ask the team about quieter times by calling {PHONE}.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/faq/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PHONE"
+    ]
+  },
+  {
+    "id": "faq-059",
+    "q": "Is Brihadhee on Instagram?",
+    "a": "Yes, Brihadhee is on Instagram as @brihadhee, where you can see photos of dishes and updates from the Anna Nagar restaurant. Instagram posts are not a substitute for confirmed timings or prices, so check the website or Google Maps before you visit. The gallery page also shows photos of the restaurant and food.",
+    "pages": [
+      "/gallery/",
+      "/contact/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-060",
+    "q": "Where can I read reviews of Brihadhee?",
+    "a": "Brihadhee reviews appear on Google Maps, Zomato, Swiggy, EazyDiner, District and Justdial, each with its own rating system. Read a few recent reviews on each platform to judge for yourself. The reviews page on this website shows only real reviews, with the platform named, for the Anna Nagar restaurant.",
+    "pages": [
+      "/reviews/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-061",
+    "q": "Is Brihadhee related to Brihadeeswarar Temple?",
+    "a": "No. Brihadhee is a pure vegetarian South Indian restaurant in Anna Nagar, Chennai, and it is separate from Brihadeeswarar Temple in Thanjavur and from baby-name pages. The similar spelling can confuse search results. Search \"Brihadhee restaurant Anna Nagar\" to reach the right place, and use the location page for directions.",
+    "pages": [
+      "/about/",
+      "/faq/"
+    ],
+    "group": "Name and brand clarity",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-062",
+    "q": "How do I spell Brihadhee, and what are other spellings?",
+    "a": "The restaurant's name is spelt Brihadhee. People also type it as Brihadhi, Brihadee, Bruhadhee or Brahadhee, and all of these point to the same pure vegetarian restaurant in Anna Nagar, Chennai. Using \"Brihadhee Anna Nagar\" in search or on a map app helps avoid results for the temple or baby names.",
+    "pages": [
+      "/about/",
+      "/faq/"
+    ],
+    "group": "Name and brand clarity",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-063",
+    "q": "What is Beyond Curry by Brihadhee?",
+    "a": "Beyond Curry by Brihadhee is a delivery listing that appears at the same Anna Nagar address as Brihadhee on Justdial. {BEYOND_CURRY_STATEMENT} If you are unsure which menu you are ordering from, check the restaurant name and address on Swiggy or Zomato before placing your order.",
+    "pages": [
+      "/order/",
+      "/about/",
+      "/faq/"
+    ],
+    "group": "Name and brand clarity",
+    "onlyIfTrue": true,
+    "tokens": [
+      "BEYOND_CURRY_STATEMENT"
+    ]
+  },
+  {
+    "id": "faq-064",
+    "q": "Does Brihadhee serve non-vegetarian food?",
+    "a": "No, Brihadhee does not serve non-vegetarian food. It is a pure vegetarian South Indian restaurant in Anna Nagar, so the whole menu, including kothu parotta and kothu idiyappam, is vegetarian. If a third-party listing shows a different tag, treat Brihadhee's own website and Google profile as the reference.",
+    "pages": [
+      "/",
+      "/faq/",
+      "/menu/"
+    ],
+    "group": "About Brihadhee",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-065",
+    "q": "Where can I see the full Brihadhee menu with prices?",
+    "a": "The full Brihadhee menu, with dishes and prices, is on the menu page of this website in plain text. It is organised into dosa, mini tiffin, Nellai meals, tiffin, parotta and kothu, filter coffee, breakfast, lunch meals and dinner. Prices can change, so confirm with the Anna Nagar team when ordering.",
+    "pages": [
+      "/menu/",
+      "/faq/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-066",
+    "q": "Does Brihadhee serve lunch meals?",
+    "a": "Yes, Brihadhee offers Nellai meals, a traditional Tirunelveli-style vegetarian meal that suits lunch in Anna Nagar. Whether lunch is served at your time depends on opening hours, which are {HOURS_TEXT}. See the lunch meals page for what comes with the meal, and ask in advance if you are visiting with a group.",
+    "pages": [
+      "/menu/lunch-meals/",
+      "/menu/nellai-meals/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-067",
+    "q": "Does Brihadhee serve idli, vada and pongal?",
+    "a": "Yes, Brihadhee serves classic South Indian tiffin items such as idli, vada and pongal, along with dosa and kesari. These are usually eaten with sambar and chutney, and filter coffee is the traditional drink. The tiffin menu page has the current list of items and prices at the Anna Nagar restaurant.",
+    "pages": [
+      "/menu/tiffin/",
+      "/menu/breakfast/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-068",
+    "q": "Does Brihadhee serve desserts like kesari?",
+    "a": "Yes, kesari, a soft, sweet semolina dessert made with ghee and sugar, is among the dishes at Brihadhee in Anna Nagar. It is often enjoyed after a tiffin or a meal. Other sweet items may change, so check the menu page or ask the team when you order.",
+    "pages": [
+      "/menu/tiffin/",
+      "/menu/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-069",
+    "q": "Does Brihadhee serve paneer dishes?",
+    "a": "Yes, paneer poppers are among the vegetarian snacks at Brihadhee in Anna Nagar. Paneer is fresh Indian cottage cheese, so these are vegetarian but contain dairy. Other paneer dishes may be available, so check the menu page for the current list, and ask the team for suggestions when you order.",
+    "pages": [
+      "/menu/",
+      "/faq/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-070",
+    "q": "What is the difference between mini tiffin and Nellai meals?",
+    "a": "A mini tiffin is a small-portion combo of tiffin items, typically eaten at breakfast or as a light meal, while Nellai meals are a fuller Tirunelveli-style meal served with rice and several gravies and sides. Choose mini tiffin for variety and a lighter appetite, and Nellai meals for a complete lunch.",
+    "pages": [
+      "/menu/mini-tiffin/",
+      "/menu/nellai-meals/",
+      "/guides/what-is-mini-tiffin/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-071",
+    "q": "Is the food at Brihadhee spicy?",
+    "a": "Spice levels at Brihadhee vary by dish: idli, pongal and kesari are typically mild, while gravies and some dosa fillings can be spicier. Tell the team at the Anna Nagar restaurant how much heat you prefer when you order, especially for children or elders. The menu page describes each dish.",
+    "pages": [
+      "/menu/",
+      "/faq/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-072",
+    "q": "Is Brihadhee good for kids?",
+    "a": "Brihadhee has soft, familiar vegetarian options that children often enjoy, such as idli, dosa, pongal and kesari. Because spice levels vary, tell the Anna Nagar team when ordering for kids. If you are planning a family visit, check timings, which are {HOURS_TEXT}, and ask the team about the best time to come.",
+    "pages": [
+      "/",
+      "/faq/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-073",
+    "q": "Is Brihadhee good for students?",
+    "a": "Brihadhee can suit students in Anna Nagar who want South Indian vegetarian food, depending on budget, as its price band is {PRICE_BAND}. A mini tiffin lets you taste several items in one order, and groups can share dishes to manage the bill. Full item prices are on the menu page.",
+    "pages": [
+      "/menu/",
+      "/faq/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PRICE_BAND"
+    ]
+  },
+  {
+    "id": "faq-074",
+    "q": "Is Brihadhee good for morning walkers near Anna Nagar Tower Park?",
+    "a": "Brihadhee can be a convenient breakfast stop after a morning walk at Anna Nagar Tower Park, a nearby landmark, with idli, pongal, vada, dosa and filter coffee on the menu. Check opening time first: Brihadhee is open {HOURS_TEXT}. The location page has directions from the park to the restaurant.",
+    "pages": [
+      "/menu/breakfast/",
+      "/location/anna-nagar/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-075",
+    "q": "Is Brihadhee good for out-of-town visitors and NRIs?",
+    "a": "Yes, Brihadhee is a good place for visitors and NRIs who want to taste Tamil vegetarian food in Chennai, with Nellai meals, mini tiffin, customised dosa and Tamil home-style dishes in one Anna Nagar restaurant. Ask the team to explain dishes you do not recognise. The guides section explains each dish simply.",
+    "pages": [
+      "/guides/",
+      "/about/",
+      "/faq/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-076",
+    "q": "Is Brihadhee suitable during vegetarian-only festival periods?",
+    "a": "Because Brihadhee is a pure vegetarian restaurant in Anna Nagar, it can suit people who eat only vegetarian food during observances such as Navaratri, Karthigai, Margazhi or Ayyappa mala. If you follow stricter rules, such as no onion or garlic, confirm with the team before ordering. Check the calendar for dates.",
+    "pages": [
+      "/seasonal/margazhi/",
+      "/faq/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-077",
+    "q": "What is idli?",
+    "a": "Idli is a soft, round, steamed South Indian cake made from a fermented batter of rice and urad dal (black gram). It is light, mildly flavoured and usually eaten for breakfast with sambar, chutney or milagai podi. Brihadhee in Anna Nagar lists idli among its tiffin items; see the tiffin menu page.",
+    "pages": [
+      "/menu/tiffin/",
+      "/guides/tamil-breakfast-explained/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-078",
+    "q": "What is a dosa made of?",
+    "a": "Dosa is a thin, crisp or soft South Indian crepe made from a fermented batter of rice and urad dal, cooked on a hot griddle. It is served plain or with fillings such as spiced potato, along with sambar and chutneys. Brihadhee in Anna Nagar is known for its dosa varieties and customised dosa.",
+    "pages": [
+      "/guides/types-of-dosa/",
+      "/menu/dosa/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-079",
+    "q": "What is pongal?",
+    "a": "Pongal, also called ven pongal, is a comforting Tamil breakfast of rice and moong dal cooked together until soft, then seasoned with ghee, black pepper, cumin and curry leaves. It is usually served with sambar and coconut chutney. Brihadhee in Anna Nagar lists pongal among its tiffin items.",
+    "pages": [
+      "/menu/tiffin/",
+      "/guides/tamil-breakfast-explained/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-080",
+    "q": "What is vada?",
+    "a": "Vada, or medu vada, is a crisp, ring-shaped South Indian fritter made from urad dal batter, fried until golden outside and soft inside. It is eaten with sambar and chutney, and often alongside idli or pongal. Brihadhee in Anna Nagar lists vada among its tiffin items; see the tiffin menu page.",
+    "pages": [
+      "/menu/tiffin/",
+      "/guides/tamil-breakfast-explained/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-081",
+    "q": "What is kesari?",
+    "a": "Kesari is a soft South Indian sweet made from semolina (rava) roasted in ghee and cooked with sugar and water, often with cashews, raisins and cardamom, and sometimes a saffron or food-colour tint. It is usually a small sweet served with tiffin or after a meal. Brihadhee in Anna Nagar lists kesari.",
+    "pages": [
+      "/menu/tiffin/",
+      "/guides/tamil-breakfast-explained/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-082",
+    "q": "What is sambar?",
+    "a": "Sambar is a South Indian lentil and vegetable stew made with toor dal, tamarind, vegetables and a spice blend called sambar powder. It is served with idli, dosa, vada and rice, and is a staple of Tamil meals. Taste and spice vary from kitchen to kitchen; the menu pages show what each Brihadhee dish is served with.",
+    "pages": [
+      "/guides/tamil-breakfast-explained/",
+      "/menu/tiffin/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-083",
+    "q": "What is idiyappam?",
+    "a": "Idiyappam, also called string hoppers, is a South Indian dish of steamed rice-flour dough pressed into thin strands and shaped into small nests. It is soft, light and mild, and is eaten with sodhi, salna, coconut milk or sugar. Brihadhee in Anna Nagar lists idiyappam and kothu idiyappam on its menu.",
+    "pages": [
+      "/guides/kothu-idiyappam/",
+      "/menu/parotta-kothu/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-084",
+    "q": "What is the difference between ghee roast and paper roast dosa?",
+    "a": "Ghee roast is a crisp dosa cooked with ghee, usually richer in flavour, while paper roast is a very thin, large, extra-crisp dosa that looks like paper. Both are served with chutney and sambar. Availability varies by restaurant, so check the Brihadhee dosa menu page to see which roasts are offered in Anna Nagar.",
+    "pages": [
+      "/guides/types-of-dosa/",
+      "/menu/dosa/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-085",
+    "q": "How is South Indian filter coffee made?",
+    "a": "South Indian filter coffee is made by pouring hot water over finely ground coffee, often blended with chicory, in a two-chamber metal filter. The strong decoction drips slowly, then is mixed with hot, frothed milk and sugar and served in a steel tumbler and davara. Brihadhee in Anna Nagar serves filter coffee.",
+    "pages": [
+      "/guides/filter-coffee-guide/",
+      "/menu/filter-coffee/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-086",
+    "q": "What are paneer poppers?",
+    "a": "Paneer poppers are bite-sized pieces of paneer, a fresh Indian cottage cheese, usually coated and fried or tossed in spices until crisp outside and soft inside. They are a vegetarian snack, often served with a dip or chutney. Brihadhee in Anna Nagar lists paneer poppers; check the menu page for the current serving.",
+    "pages": [
+      "/menu/",
+      "/faq/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-087",
+    "q": "How is Nellai food different from other Tamil food?",
+    "a": "Nellai, or Tirunelveli, cooking is commonly known for mild, coconut-rich gravies such as sodhi and for simple home-style meals using local vegetables and spices. It differs in flavour from some other regional Tamil cooking, though every kitchen has its own recipes. Brihadhee in Anna Nagar serves Nellai meals if you want to compare.",
+    "pages": [
+      "/guides/nellai-meals-explained/",
+      "/menu/nellai-meals/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-088",
+    "q": "What does tiffin mean in Tamil Nadu?",
+    "a": "In Tamil Nadu, tiffin means a light meal or snack, usually served in the morning or evening, such as idli, dosa, vada, pongal, poori and kesari. It differs from meals, which is a fuller rice-based lunch. Brihadhee in Anna Nagar serves both tiffin items and Nellai meals; see the tiffin menu page.",
+    "pages": [
+      "/guides/tamil-breakfast-explained/",
+      "/menu/tiffin/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-089",
+    "q": "Is dosa a healthy breakfast?",
+    "a": "A plain dosa is made from fermented rice and lentil batter and cooked with little oil, so it can be a reasonable breakfast, but the effect on your diet depends on ghee, oil, fillings and portion size. Pure vegetarian does not automatically mean low-calorie. For medical diets, ask a doctor or dietitian, and check ingredients with the Anna Nagar team.",
+    "pages": [
+      "/guides/types-of-dosa/",
+      "/menu/dosa/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-090",
+    "q": "What is the difference between idli and dosa?",
+    "a": "Idli and dosa both use fermented rice and urad dal batter, but idli is steamed into soft, round cakes while dosa is spread thin and cooked on a griddle until crisp or soft. Idli is lighter and milder; dosa offers more variety. Brihadhee in Anna Nagar serves both, and the menu page lists each.",
+    "pages": [
+      "/guides/types-of-dosa/",
+      "/menu/tiffin/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-091",
+    "q": "What should we order at Brihadhee when sharing as a group?",
+    "a": "For a group sharing at Brihadhee in Anna Nagar, mix a few mini tiffins to taste several items, two or three different dosas, a plate of kothu idiyappam or paanai parotta with salna, and filter coffee for the table. Order in rounds so dosas stay crisp. Ask the team to suggest quantities for your group size.",
+    "pages": [
+      "/events/group-dining/",
+      "/menu/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-092",
+    "q": "What are the common types of dosa?",
+    "a": "Common dosa types include plain (sada) dosa, masala dosa filled with spiced potato, ghee roast, paper roast, rava dosa made with semolina, set dosa that is soft and spongy, and podi dosa with spice powder. Menus vary by restaurant. Brihadhee in Anna Nagar offers many dosa varieties and customised dosa; see the dosa menu page.",
+    "pages": [
+      "/guides/types-of-dosa/",
+      "/menu/dosa/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-093",
+    "q": "What is the difference between kothu parotta and paanai parotta?",
+    "a": "Paanai parotta is a layered parotta usually served as a whole piece with gravy, while kothu parotta is parotta shredded and stir-fried on a hot griddle with spices, vegetables and gravy. One is soft and flaky to tear and dip; the other is mixed and hearty. Brihadhee in Anna Nagar lists both as vegetarian dishes.",
+    "pages": [
+      "/menu/parotta-kothu/",
+      "/guides/paanai-parotta/"
+    ],
+    "group": "Dish explainers",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-094",
+    "q": "Is Brihadhee suitable for senior citizens?",
+    "a": "Brihadhee has soft vegetarian dishes that are commonly easy to eat, such as idli, pongal and kesari, and Tamil home-style cooking that is familiar to many elders. Facilities such as seating, steps and accessibility are best confirmed by phone on {PHONE} before a visit to the Anna Nagar restaurant.",
+    "pages": [
+      "/accessibility/",
+      "/faq/"
+    ],
+    "group": "Who it suits",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PHONE"
+    ]
+  },
+  {
+    "id": "faq-095",
+    "q": "How is Brihadhee different from other vegetarian restaurants in Anna Nagar?",
+    "a": "Brihadhee focuses on pure vegetarian Tamil cooking in Anna Nagar, with dosa varieties including customised dosa, mini tiffin, Nellai meals, Tamil home-style dishes and filter coffee. Other vegetarian restaurants nearby have their own strengths, so compare menus, prices and timings yourself. The compare section of this website lists facts with sources and dates.",
+    "pages": [
+      "/compare/best-pure-veg-restaurants-anna-nagar/",
+      "/about/"
+    ],
+    "group": "About Brihadhee",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-096",
+    "q": "Where can I find a pure vegetarian restaurant in Anna Nagar, Chennai?",
+    "a": "Brihadhee is a pure vegetarian South Indian restaurant in Anna Nagar, Chennai, at W Block Main Road, 3rd Avenue. It serves dosa, mini tiffin, Nellai meals, parotta, idiyappam and filter coffee for dine-in, takeaway and delivery. Search \"Brihadhee Anna Nagar\" on Google Maps for directions, or open the location page.",
+    "pages": [
+      "/",
+      "/location/anna-nagar/"
+    ],
+    "group": "About Brihadhee",
+    "onlyIfTrue": false,
+    "tokens": []
+  },
+  {
+    "id": "faq-097",
+    "q": "Where can I get South Indian breakfast in Anna Nagar?",
+    "a": "Brihadhee in Anna Nagar serves South Indian breakfast items such as idli, vada, pongal and dosa, with filter coffee, in a pure vegetarian setting. Breakfast timing depends on opening hours: {HOURS_TEXT}. Check the breakfast page for dishes and prices, and the location page if you are coming from Anna Nagar Tower.",
+    "pages": [
+      "/menu/breakfast/",
+      "/location/anna-nagar/"
+    ],
+    "group": "Signature dishes and menu",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT"
+    ]
+  },
+  {
+    "id": "faq-098",
+    "q": "How do I leave a review for Brihadhee?",
+    "a": "To review Brihadhee, open its Google Business Profile at {GBP_URL} and choose the review option, then describe what you ordered and how the visit felt. Honest reviews help other diners, and Brihadhee does not offer rewards for positive reviews. You can also review on Swiggy, Zomato or EazyDiner after your order.",
+    "pages": [
+      "/reviews/",
+      "/contact/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": [
+      "GBP_URL"
+    ]
+  },
+  {
+    "id": "faq-099",
+    "q": "How do I give feedback or report a problem to Brihadhee?",
+    "a": "To share feedback or report a problem with a visit or order at Brihadhee in Anna Nagar, call {PHONE} or use the contact page. For a delivery issue, also raise it in the Swiggy or Zomato app, as delivery and payments are handled by those platforms. Please mention the date, time and order details.",
+    "pages": [
+      "/contact/",
+      "/faq/"
+    ],
+    "group": "Ordering, delivery and listings",
+    "onlyIfTrue": false,
+    "tokens": [
+      "PHONE"
+    ]
+  },
+  {
+    "id": "faq-100",
+    "q": "Is Brihadhee open on public holidays and festival days?",
+    "a": "Brihadhee's holiday timings can differ from its regular schedule of {HOURS_TEXT}. Before a special trip to Anna Nagar on a public holiday or festival day, check Google Maps or call {PHONE}. Festival dates change every year, so check the calendar. Special hours, if any, are announced on Instagram, @brihadhee.",
+    "pages": [
+      "/location/anna-nagar/",
+      "/seasonal/margazhi/",
+      "/faq/"
+    ],
+    "group": "Timings, parking and booking",
+    "onlyIfTrue": false,
+    "tokens": [
+      "HOURS_TEXT",
+      "PHONE"
+    ]
+  }
+]

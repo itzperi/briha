@@ -1,0 +1,31 @@
+---
+import { NAV } from '../lib/site';
+import { facts } from '../data/brand-facts';
+interface Props { altHref?: string; lang?: 'en' | 'ta' }
+const { altHref, lang = 'en' } = Astro.props;
+---
+<header class="bg-cream border-b border-sand">
+  <div class="wrap flex items-center justify-between gap-3 py-3">
+    <a href="/" class="no-underline flex items-center gap-2" style="font-family:'Fraunces Variable','Fraunces Fallback',serif;font-size:1.5rem;font-weight:700;color:var(--color-leaf-dark);text-decoration:none" aria-label={`${facts.name}, home`}>
+      <img src="/brand/logo-mark.png" alt="" width="40" height="40" style="width:40px;height:40px;border-radius:50%" />
+      <span>{facts.name}</span>
+    </a>
+    <nav aria-label="Main" class="hidden md:block">
+      <ul class="flex items-center gap-5" style="list-style:none;margin:0;padding:0">
+        {NAV.map((n) => <li><a href={n.href} class="py-2 inline-block">{n.label}</a></li>)}
+        {altHref && lang === 'en' && <li><a href={altHref} hreflang="ta-IN" lang="ta">தமிழ்</a></li>}
+        {lang === 'ta' && <li><a href="/" hreflang="en-IN" lang="en">English</a></li>}
+      </ul>
+    </nav>
+    <details class="md:hidden relative">
+      <summary class="btn" aria-label="Open menu">Menu</summary>
+      <nav aria-label="Mobile" class="absolute right-0 mt-2 w-64 card z-40">
+        <ul style="list-style:none;margin:0;padding:0">
+          {NAV.map((n) => <li><a href={n.href} class="block py-3 border-b border-sand">{n.label}</a></li>)}
+          {altHref && lang === 'en' && <li><a href={altHref} hreflang="ta-IN" lang="ta" class="block py-3">தமிழ்</a></li>}
+          {lang === 'ta' && <li><a href="/" hreflang="en-IN" lang="en" class="block py-3">English</a></li>}
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { galleryAlts } from '../data/photo-alts';
+const photos = import.meta.glob<{ default: ImageMetadata }>('/src/assets/photos/gallery-*.{jpg,jpeg,png,webp,avif}', { eager: true });
+const list = Object.entries(photos)
+  .map(([p, m]) => ({ name: p.split('/').pop()!.replace(/\.[^.]+$/, ''), meta: m.default }))
+  .filter((p) => galleryAlts[p.name])
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+<BaseLayout title="Photo Gallery | Brihadhee, Anna Nagar, Chennai" description="Photos of dosa, parotta, meals and filter coffee at Brihadhee, W Block Main Road, 3rd Avenue, Anna Nagar, Chennai." path="/gallery/" noindex={list.length === 0} breadcrumbs={[{ name: 'Gallery', href: '/gallery/' }]}>
+  <div class="wrap py-6">
+    <h1>Photo gallery</h1>
+    {list.length === 0 ? (
+      <div class="card mt-5"><p>Our photo gallery is coming soon.</p></div>
+    ) : (
+      <div class="grid gap-4 mt-5 sm:grid-cols-2 lg:grid-cols-3">
+        {list.map((p) => <Image src={p.meta} alt={galleryAlts[p.name]} widths={[400, 800]} sizes="(min-width:1024px) 360px, 100vw" loading="lazy" class="rounded-xl w-full h-auto" />)}
+      </div>
+    )}
+    <p class="mt-6"><a href="/menu/">See the menu</a> · <a href="/location/anna-nagar/">Find us</a></p>
+  </div>
+</BaseLayout>

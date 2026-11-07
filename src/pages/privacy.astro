@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { facts } from '../data/brand-facts';
+import { ok, fullAddress } from '../lib/facts';
+import { GA4_ID } from '../lib/site';
+---
+<BaseLayout title="Privacy | Brihadhee, Anna Nagar, Chennai" description="How the Brihadhee website handles your information: booking requests, analytics and contact. Plain-language privacy notice." path="/privacy/" breadcrumbs={[{ name: 'Privacy', href: '/privacy/' }]}>
+  <div class="wrap py-6 max-w-3xl prose-b" style="margin-inline:auto">
+    <h1>Privacy</h1>
+    <p>This page explains what {facts.name} (the restaurant at {fullAddress()}) does with information on this website. Have this page checked by a lawyer before launch.</p>
+    <h2>Table booking requests</h2>
+    <p>If you send a booking request, we receive your name, phone number, date, time, party size and any notes. A form service passes this to us by email. We use it only to handle your booking and do not sell it or use it for ads.</p>
+    <h2>Analytics</h2>
+    {GA4_ID ? <p>We use Google Analytics 4 to count visits and button clicks (such as call, directions and order). Advertising features and Google signals are switched off.</p> : <p>This site does not currently use analytics.</p>}
+    <h2>Third-party links and maps</h2>
+    <p>The map loads from Google only when you press "Show map". Delivery buttons take you to Swiggy or Zomato, which have their own privacy policies.</p>
+    <h2>Your choices</h2>
+    <p>To ask us to delete a booking request, contact us using the details on the <a href="/contact/">contact page</a>.</p>
+  </div>
+</BaseLayout>

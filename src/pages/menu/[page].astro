@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MenuTable from '../../components/MenuTable.astro';
+import FAQ from '../../components/FAQ.astro';
+import Photo from '../../components/Photo.astro';
+import { getCollection } from 'astro:content';
+import { facts } from '../../data/brand-facts';
+import { itemsIn, itemsInPeriod, type SectionId, type Period } from '../../data/menu';
+import { menuPages } from '../../data/pages-meta';
+import { faqsFor } from '../../data/faq';
+import { faqSchema, menuSchema } from '../../lib/schema';
+import { telHref } from '../../lib/facts';
+
+export function getStaticPaths() {
+  return menuPages.map((m) => ({ params: { page: m.page }, props: { meta: m } }));
+}
+const { meta } = Astro.props;
+const path = `/menu/${meta.page}/`;
+const items = meta.kind === 'section' ? itemsIn(meta.key as SectionId) : itemsInPeriod(meta.key as Period);
+const live = items.length > 0;
+const faqs = faqsFor(path);
+const guides = await getCollection('guides', (g) => !g.data.draft);
+const guide = meta.guide ? guides.find((g) => g.id.replace(/\.mdx$/, '') === meta.guide) : undefined;
+const tel = telHref();
+const sectionIds = meta.kind === 'section' ? [meta.key as SectionId] : undefined;
+---
+<BaseLayout title={meta.seoTitle} description={meta.metaDesc} {path} noindex={!live} breadcrumbs={[{ name: 'Menu', href: '/menu/' }, { name: meta.h1, href: path }]} schema={[meta.kind === 'section' ? menuSchema(sectionIds) : null, faqSchema(faqs)]}>
+  <div class="wrap py-6">
+    <h1>{meta.h1}</h1>
+    <p class="mt-3 text-lg max-w-3xl">{meta.intro} You can try it at {facts.name}, {facts.streetAddress}, {facts.locality}.</p>
+    <div class="mt-5"><Photo name={`${meta.page}-hero`} alt={`${meta.h1} at Brihadhee`} label={`Photo: ${meta.h1}, 1600x900`} eager /></div>
+    {live ? (
+      <>
+        <h2>On the menu</h2>
+        <MenuTable items={items} caption={meta.h1} />
+      </>
+    ) : (
+      <div class="card mt-5">
+        <p><strong>This list is being finalised.</strong> We publish only dishes and prices that we have checked against the current menu.</p>
+        <p class="mt-2">Please {tel ? <>call <a href={tel}>{facts.phone}</a></> : 'ask at the restaurant'}.</p>
+      </div>
+    )}
+    {guide && <p class="mt-4"><a href={`/guides/${guide.id.replace(/\.mdx$/, '')}/`}>Read the guide: {guide.data.title}</a></p>}
+    {faqs.length > 0 && (<><h2>Questions</h2><FAQ faqs={faqs} /></>)}
+    <p class="mt-8"><a class="btn btn-primary" href="/order/">Order</a> <a class="btn" href="/book-a-table/">Book a table</a> <a class="btn" href="/menu/">Full menu</a></p>
+  </div>
+</BaseLayout>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import { getCollection, render } from 'astro:content';
+import { articleSchema, faqSchema } from '../../lib/schema';
+import { pathLive } from '../../data/menu';
+import { facts } from '../../data/brand-facts';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((g) => ({ params: { slug: g.id.replace(/\.mdx$/, '') }, props: { entry: g } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const path = `/guides/${entry.id.replace(/\.mdx$/, '')}/`;
+const faqs = d.faq.map((f, i) => ({ id: `g${i}`, group: 'Guide', q: f.q, a: f.a, pages: [path] }));
+const related = d.relatedMenu.filter((p) => pathLive(p));
+const fmt = (x: Date) => x.toISOString().slice(0, 10);
+---
+<BaseLayout title={d.title} description={d.description} {path} noindex={d.draft} ogType="article" updated={fmt(d.updated)} breadcrumbs={[{ name: 'Guides', href: '/guides/' }, { name: d.title, href: path }]} schema={[d.draft ? null : articleSchema({ title: d.title, description: d.description, path, author: d.author, published: d.datePublished, updated: d.updated }), faqSchema(faqs)]}>
+  <article class="wrap py-6 max-w-3xl prose-b" style="margin-inline:auto">
+    <h1>{d.title}</h1>
+    {d.draft && <p class="card" role="note">This guide is being finalised with the kitchen.</p>}
+    <p class="text-sm" style="opacity:.8">{d.author ? <>By {d.author} · </> : null}Updated {fmt(d.updated)}</p>
+    <Content />
+    <aside class="card mt-8">
+      <h2 style="margin-top:0">Where to try it in Anna Nagar</h2>
+      <p>{facts.name} is on {facts.streetAddress}, {facts.locality}, {facts.city}.</p>
+      <ul>
+        {related.map((p) => <li><a href={p}>{p.replace(/\//g, ' ').trim().replace('menu', 'Menu:')}</a></li>)}
+        <li><a href="/menu/">Full menu</a></li>
+        <li><a href="/location/anna-nagar/">Address and directions</a></li>
+      </ul>
+    </aside>
+    {faqs.length > 0 && (<><h2>Questions</h2><FAQ faqs={faqs} /></>)}
+  </article>
+</BaseLayout>

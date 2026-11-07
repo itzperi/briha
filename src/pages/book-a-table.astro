@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.astro';
+import { facts } from '../data/brand-facts';
+import { telHref, waHref, bookingPlatforms, directionsUrl } from '../lib/facts';
+import { BOOKING_ENDPOINT, BOOKING_KEY, absUrl } from '../lib/site';
+import { faqsFor } from '../data/faq';
+import { faqSchema } from '../lib/schema';
+
+const offered = facts.reservations === 'yes';
+const platforms = bookingPlatforms();
+const tel = telHref();
+const wa = waHref(`Hi ${facts.name}, I would like to ask about a table.`);
+const faqs = faqsFor('/book-a-table/');
+const formReady = offered && facts.bookingForm && Boolean(BOOKING_ENDPOINT && BOOKING_KEY);
+const hasOption = platforms.length > 0 || facts.walkIn || formReady;
+---
+<BaseLayout title="Book a Table | Brihadhee, Anna Nagar, Chennai" description="How to book a table at Brihadhee, 3rd Avenue, Anna Nagar, Chennai: use the booking links below, or simply walk in." path="/book-a-table/" noindex={!offered || !hasOption} breadcrumbs={[{ name: 'Book a table', href: '/book-a-table/' }]} hideActionBar schema={[faqSchema(faqs)]}>
+  <div class="wrap py-6 max-w-2xl" style="margin-inline:auto">
+    <h1>Book a table at Brihadhee</h1>
+    {offered ? (
+      <p class="mt-3 text-lg">
+        {platforms.length > 0 ? `You can book a table through ${platforms.map((p) => p.name).join(' or ')}` : 'Table booking details are being confirmed'}{facts.walkIn ? ', or you can simply walk in.' : '.'}
+      </p>
+    ) : (
+      <p class="mt-3 text-lg">Table booking details are being confirmed. Please call or visit.</p>
+    )}
+    <div class="mt-4 flex flex-wrap gap-3">
+      {platforms.map((p) => <a class="btn btn-accent" href={p.url} rel="noopener" target="_blank" data-event="book_click" data-label={p.name.toLowerCase().replace(/\s+/g, '-')}>Book on {p.name}</a>)}
+      <a class="btn" href={directionsUrl()} target="_blank" rel="noopener" data-event="directions_click" data-label="book">Directions for walk-in</a>
+      {tel && <a class="btn" href={tel} data-event="call_click" data-label="book">Call {facts.phone}</a>}
+      {wa && <a class="btn" href={wa} rel="noopener" target="_blank" data-event="whatsapp_click">WhatsApp us</a>}
+    </div>
+
+    {formReady && (
+      <form id="booking-form" class="card mt-6 grid gap-4" method="post" action={BOOKING_ENDPOINT} novalidate>
+        <input type="hidden" name="access_key" value={BOOKING_KEY} />
+        <input type="hidden" name="subject" value={`New table booking: ${facts.name}`} />
+        <input type="hidden" name="from_name" value={`${facts.name} website`} />
+        <input type="hidden" name="redirect" value={absUrl('/thank-you/')} />
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
+        <div><label for="name" class="font-semibold">Your name</label><input id="name" name="name" required autocomplete="name" class="block w-full mt-1 border-2 border-sand rounded-lg p-3 bg-white" /></div>
+        <div><label for="phone" class="font-semibold">Phone number</label><input id="phone" name="phone" type="tel" inputmode="tel" required autocomplete="tel" class="block w-full mt-1 border-2 border-sand rounded-lg p-3 bg-white" /></div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div><label for="date" class="font-semibold">Date</label><input id="date" name="date" type="date" required class="block w-full mt-1 border-2 border-sand rounded-lg p-3 bg-white" /></div>
+          <div><label for="time" class="font-semibold">Time</label><input id="time" name="time" type="time" required class="block w-full mt-1 border-2 border-sand rounded-lg p-3 bg-white" /></div>
+          <div><label for="party" class="font-semibold">People</label><input id="party" name="party_size" type="number" min="1" max="100" required class="block w-full mt-1 border-2 border-sand rounded-lg p-3 bg-white" /></div>
+        </div>
+        <div><label for="notes" class="font-semibold">Notes (optional)</label><textarea id="notes" name="notes" rows="3" class="block w-full mt-1 border-2 border-sand rounded-lg p-3 bg-white"></textarea></div>
+        <button type="submit" class="btn btn-primary">Send booking request</button>
+        <p id="form-status" role="status" aria-live="polite" class="font-semibold"></p>
+        <p class="text-sm" style="opacity:.8">We use these details only to handle your booking. See our <a href="/privacy/">privacy page</a>.</p>
+      </form>
+    )}
+    {faqs.length > 0 && (<><h2>Booking questions</h2><FAQ faqs={faqs} /></>)}
+    <p class="mt-6"><a href="/">Home</a> · <a href="/menu/">Menu</a>{facts.groupDiningConfirmed && <> · <a href="/events/group-dining/">Group dining</a></>}</p>
+  </div>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('booking-form') as HTMLFormElement | null;
+  if (form) {
+    const date = form.querySelector<HTMLInputElement>('#date');
+    if (date) date.min = new Date().toISOString().slice(0, 10);
+    const status = document.getElementById('form-status')!;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const missing = [...form.querySelectorAll<HTMLInputElement>('[required]')].filter((i) => !i.value.trim());
+      if (missing.length) {
+        status.textContent = 'Please fill in your name, phone, date, time and number of people.';
+        missing[0].focus();
+        return;
+      }
+      status.textContent = 'Sending...';
+      try {
+        const res = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+        const json = await res.json().catch(() => ({ success: res.ok }));
+        if (res.ok && json.success !== false) {
+          (window as any).gtag?.('event', 'book_submit', { page_path: location.pathname });
+          location.href = '/thank-you/';
+        } else {
+          status.textContent = 'Sorry, we could not send that. Please call us instead.';
+        }
+      } catch {
+        status.textContent = 'Network problem. Please call us instead.';
+      }
+    });
+  }
+</script>

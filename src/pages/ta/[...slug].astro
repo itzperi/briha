@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+// Tamil pages exist only when the owner supplies human-written Tamil in src/content/ta/*.mdx
+export async function getStaticPaths() {
+  if (Object.keys(import.meta.glob('/src/content/ta/*.{md,mdx}')).length === 0) return [];
+  const entries = await getCollection('ta', (e) => !e.data.draft);
+  return entries.map((e) => ({ params: { slug: e.id.replace(/\.(md|mdx)$/, '') }, props: { entry: e } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const path = `/ta/${entry.id.replace(/\.(md|mdx)$/, '')}/`;
+const d = entry.data;
+---
+<BaseLayout title={d.title} description={d.description} {path} lang="ta" updated={d.updated.toISOString().slice(0, 10)} alternates={[{ hreflang: 'en-IN', href: d.enPath }, { hreflang: 'ta-IN', href: path }]}>
+  <article class="wrap py-6 max-w-3xl prose-b" style="margin-inline:auto">
+    <h1>{d.title}</h1>
+    <Content />
+  </article>
+</BaseLayout>

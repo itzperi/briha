@@ -1,0 +1,107 @@
+---
+import '../styles/global.css';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/fraunces';
+import '@fontsource/noto-sans-tamil/400.css';
+import '@fontsource/noto-sans-tamil/700.css';
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import frauncesLatin from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ActionBar from '../components/ActionBar.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { assertMeta } from '../lib/seo';
+import { absUrl, DRAFT_MODE, GA4_ID, BUILD_DATE } from '../lib/site';
+import { facts } from '../data/brand-facts';
+import { organizationSchema, websiteSchema, breadcrumbSchema } from '../lib/schema';
+import { tamilTwins } from '../lib/tamil';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string; // canonical path, e.g. "/menu/"
+  noindex?: boolean; // draft pages
+  breadcrumbs?: { name: string; href: string }[]; // excluding Home
+  schema?: (Record<string, unknown> | null)[];
+  lang?: 'en' | 'ta';
+  updated?: string; // ISO date; feeds sitemap lastmod
+  hideActionBar?: boolean;
+  ogType?: 'website' | 'article';
+  alternates?: { hreflang: string; href: string }[]; // explicit (Tamil pages)
+}
+const { title, description, path, noindex = false, breadcrumbs, schema = [], lang = 'en', updated = BUILD_DATE, hideActionBar = false, ogType = 'website', alternates } = Astro.props;
+assertMeta(path, title, description);
+
+const twins = lang === 'en' ? await tamilTwins() : {};
+const twin = twins[path];
+const hreflangs = alternates ?? (twin ? [{ hreflang: 'en-IN', href: path }, { hreflang: 'ta-IN', href: twin }] : []);
+const robots = noindex || DRAFT_MODE ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
+const canonical = absUrl(path);
+const crumbs = breadcrumbs ? [{ name: 'Home', href: '/' }, ...breadcrumbs] : undefined;
+const jsonld = [organizationSchema(), websiteSchema(), crumbs ? breadcrumbSchema(crumbs) : null, ...schema].filter(Boolean);
+const htmlLang = lang === 'ta' ? 'ta-IN' : 'en-IN';
+---
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={robots} />
+    <meta name="updated" content={updated} />
+    <meta name="theme-color" content="#561d02" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={frauncesLatin} as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={facts.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'ta' ? 'ta_IN' : 'en_IN'} />
+    <meta property="og:image" content={absUrl('/og/default.jpg')} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absUrl('/og/default.jpg')} />
+    {hreflangs.map((h) => <link rel="alternate" hreflang={h.hreflang} href={absUrl(h.href)} />)}
+    {hreflangs.length > 0 && <link rel="alternate" hreflang="x-default" href={absUrl(hreflangs.find((h) => h.hreflang === 'en-IN')?.href ?? path)} />}
+    {jsonld.map((o) => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
+    {GA4_ID && !DRAFT_MODE && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+        <script is:inline define:vars={{ GA4_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+          gtag('js', new Date());
+          gtag('config', GA4_ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
+        </script>
+      </>
+    )}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to main content</a>
+    <Header altHref={twin} lang={lang} />
+    <main id="main">
+      {crumbs && <div class="wrap pt-4"><Breadcrumbs items={crumbs} /></div>}
+      <slot />
+    </main>
+    <Footer />
+    {!hideActionBar && <ActionBar />}
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        var el = e.target && e.target.closest ? e.target.closest('[data-event]') : null;
+        if (!el || !window.gtag) return;
+        window.gtag('event', el.getAttribute('data-event'), { page_path: location.pathname, link_label: el.getAttribute('data-label') || '' });
+      });
+    </script>
+  </body>
+</html>

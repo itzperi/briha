@@ -1,0 +1,6 @@
+---
+// Visible only in `astro dev`, so gaps are obvious while building. Never rendered in production HTML.
+interface Props { label: string }
+const { label } = Astro.props;
+---
+{import.meta.env.DEV && <span class="todo-chip">TODO: confirm {label}</span>}

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { facts } from '../data/brand-facts';
+import { ok, fullAddress, hoursText, telHref, waHref } from '../lib/facts';
+import { restaurantSchema } from '../lib/schema';
+const tel = telHref();
+const wa = waHref(`Hi ${facts.name}`);
+const hrs = hoursText();
+---
+<BaseLayout title="Contact Brihadhee | Anna Nagar, Chennai" description="Contact Brihadhee, W Block Main Road, 3rd Avenue, Anna Nagar, Chennai 600040: address, phone, WhatsApp, hours and social links." path="/contact/" breadcrumbs={[{ name: 'Contact', href: '/contact/' }]} schema={[restaurantSchema()]}>
+  <div class="wrap py-6 max-w-2xl" style="margin-inline:auto">
+    <h1>Contact Brihadhee</h1>
+    <dl class="card mt-5 grid gap-4">
+      <div><dt class="text-sm" style="opacity:.75">Address</dt><dd class="font-semibold">{fullAddress()}</dd></div>
+      {tel && <div><dt class="text-sm" style="opacity:.75">Phone</dt><dd class="font-semibold"><a href={tel} data-event="call_click" data-label="contact">{facts.phone}</a></dd></div>}
+      {wa && <div><dt class="text-sm" style="opacity:.75">WhatsApp</dt><dd class="font-semibold"><a href={wa} rel="noopener" target="_blank" data-event="whatsapp_click">{facts.whatsapp}</a></dd></div>}
+      {ok(facts.email) && <div><dt class="text-sm" style="opacity:.75">Email</dt><dd class="font-semibold"><a href={`mailto:${facts.email}`}>{facts.email}</a></dd></div>}
+      {hrs && <div><dt class="text-sm" style="opacity:.75">Hours</dt><dd class="font-semibold">Open {hrs}</dd></div>}
+      {ok(facts.socials.instagram) && <div><dt class="text-sm" style="opacity:.75">Instagram</dt><dd class="font-semibold"><a href={facts.socials.instagram!} rel="noopener me" target="_blank">@brihadhee</a></dd></div>}
+    </dl>
+    <p class="mt-5"><a class="btn btn-primary" href="/location/anna-nagar/">Map and directions</a> <a class="btn" href="/book-a-table/">Book a table</a></p>
+  </div>
+</BaseLayout>

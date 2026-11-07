@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { facts } from '../../data/brand-facts';
+import { ok } from '../../lib/facts';
+
+// Only built when the owner has supplied the real link. These are thin link pages (useful as GBP "order" targets
+// with UTM tags), so they are noindex and kept out of the sitemap.
+export function getStaticPaths() {
+  const out: { params: { platform: string }; props: { name: string; url: string } }[] = [];
+  if (ok(facts.delivery.swiggy)) out.push({ params: { platform: 'swiggy' }, props: { name: 'Swiggy', url: facts.delivery.swiggy! } });
+  if (ok(facts.delivery.zomato)) out.push({ params: { platform: 'zomato' }, props: { name: 'Zomato', url: facts.delivery.zomato! } });
+  return out;
+}
+const { name, url } = Astro.props;
+---
+<BaseLayout title={`Order on ${name} | Brihadhee, Anna Nagar`} description={`Order Brihadhee, 3rd Avenue, Anna Nagar, Chennai on ${name}. Delivery area, charges and timings are set by the app.`} path={`/order/${name.toLowerCase()}/`} noindex breadcrumbs={[{ name: 'Order', href: '/order/' }, { name, href: `/order/${name.toLowerCase()}/` }]}>
+  <div class="wrap py-8">
+    <h1>Order Brihadhee on {name}</h1>
+    <p class="mt-3">Delivery area, charges and timings are set by {name}. Please check them at checkout.</p>
+    <p class="mt-5"><a class="btn btn-primary" href={url} rel="noopener" target="_blank" data-event="order_click" data-label={name.toLowerCase()}>Continue to {name}</a></p>
+    <p class="mt-5"><a href="/order/">Other ways to order</a> · <a href="/menu/">Menu</a></p>
+  </div>
+</BaseLayout>

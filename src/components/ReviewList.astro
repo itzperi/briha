@@ -1,0 +1,23 @@
+---
+import reviews from '../data/reviews.json';
+import { facts } from '../data/brand-facts';
+import { ok } from '../lib/facts';
+interface Review { author: string; rating: number; text: string; date: string; permission: boolean; source: string }
+const list = (reviews as Review[]).filter((r) => r.permission === true);
+---
+{list.length > 0 ? (
+  <ul style="list-style:none;margin:0;padding:0" class="grid gap-4 md:grid-cols-2">
+    {list.map((r) => (
+      <li class="card">
+        <p aria-label={`Rated ${r.rating} out of 5`}>{'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}</p>
+        <blockquote class="mt-2">{r.text}</blockquote>
+        <p class="text-sm mt-2" style="opacity:.8">{r.author} · {r.date} · {r.source}</p>
+      </li>
+    ))}
+  </ul>
+) : (
+  <div class="card">
+    <p><strong>No reviews are shown here yet.</strong> We only display reviews that guests have given us permission to share.</p>
+    {ok(facts.socials.gbp) && <p class="mt-3"><a class="btn btn-primary" href={facts.socials.gbp!} target="_blank" rel="noopener" data-event="review_click">Leave a Google review</a></p>}
+  </div>
+)}
