@@ -46,6 +46,8 @@ Prepared 7 Nov 2026. Builds on `BRIHADHEE-SEO-AEO-GEO-PLAN.md` (the master plan)
 | Month 6 | Top 5 in the map pack for "veg restaurant Anna Nagar" within about 1 km. Named in AI answers for "veg restaurant Anna Nagar" in at least a quarter of tracked prompts. |
 | Month 12 | Page 1 for the dish and local clusters below. 60 relevant referring domains (the master plan's 90 is a stretch). Cited by AI engines in 40% or more of tracked prompts. |
 
+**The 10,000 target.** It means 10,000 organic website visits per month (Google and Bing, excluding paid and social), plus AI referrals. The month-by-month path and the cluster-by-cluster model are in section 1 and section 2 of `BRIHADHEE-SEO-AEO-GEO-PLAN.md`: stretch case 50 (month 1), 800 (month 3), 3,000 (month 6), 6,000 (month 9), 10,000 (month 12); base case about 4,500 at month 12. It is a model, not a forecast. Recalibrate in Month 2 with real Search Console impressions. Google Business Profile views, calls and direction requests are counted separately and will likely be larger than the website number.
+
 Page 1 for "restaurants in Anna Nagar" is not a goal. Aggregators own it.
 
 ---
