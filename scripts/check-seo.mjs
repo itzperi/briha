@@ -93,17 +93,23 @@ for (const p of pages) {
   }
 }
 
-// sitemap hygiene
-const smPath = path.join(dist, 'sitemap-0.xml');
-if (fs.existsSync(smPath)) {
-  const sm = fs.readFileSync(smPath, 'utf8');
+// sitemap hygiene (child sitemaps listed in sitemap-index.xml)
+for (const f of fs.readdirSync(dist).filter((n) => /^sitemap-.*\.xml$/.test(n) && n !== 'sitemap-index.xml')) {
+  const sm = fs.readFileSync(path.join(dist, f), 'utf8');
   for (const loc of sm.match(/<loc>(.*?)<\/loc>/g) ?? []) {
     const u = new URL(loc.replace(/<\/?loc>/g, '')).pathname;
     const pg = byPath.get(u);
-    if (!pg) E('sitemap', `lists a URL with no built page: ${u}`);
-    else if (pg.noindex) E('sitemap', `lists a noindex/draft page: ${u}`);
+    if (!pg) E('sitemap', `${f} lists a URL with no built page: ${u}`);
+    else if (pg.noindex) E('sitemap', `${f} lists a noindex/draft page: ${u}`);
     if (/thank-you|\/404\//.test(u)) E('sitemap', `must exclude ${u}`);
-    if (!/<lastmod>/.test(sm)) { E('sitemap', 'no lastmod values'); break; }
+    if (!/<lastmod>/.test(sm)) { E('sitemap', `${f}: no lastmod values`); break; }
+  }
+}
+if (fs.existsSync(path.join(dist, 'sitemap-index.xml'))) {
+  const idx = fs.readFileSync(path.join(dist, 'sitemap-index.xml'), 'utf8');
+  for (const loc of idx.match(/<loc>(.*?)<\/loc>/g) ?? []) {
+    const f = new URL(loc.replace(/<\/?loc>/g, '')).pathname.slice(1);
+    if (!fs.existsSync(path.join(dist, f))) E('sitemap', `index lists a missing file: ${f}`);
   }
 }
 for (const need of ['robots.txt', 'llms.txt', 'menu.json', 'sitemap-index.xml']) if (!fs.existsSync(path.join(dist, need))) E('build', `missing ${need}`);
